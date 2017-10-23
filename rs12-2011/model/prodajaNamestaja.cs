@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace rs12_2011.model
 {
-    class prodajaNamestaja
+    class ProdajaNamestaja
     {
     }
 }
