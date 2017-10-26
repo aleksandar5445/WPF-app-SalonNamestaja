@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace rs12_2011
+﻿namespace rs12_2011
 {
     class Program
     {
+
         static void Main(string[] args)
         {
+            var admin = new Administracija();
+            admin.Start();
         }
     }
 }

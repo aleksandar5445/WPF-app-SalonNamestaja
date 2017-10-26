@@ -7,3 +7,10 @@ c:\users\temp.ftn.007\documents\visual studio 2015\Projects\rs12-2011\rs12-2011\
 C:\Users\TEMP.FTN.007\Documents\rs12-2011\rs12-2011\bin\Debug\rs12-2011.exe.config
 C:\Users\TEMP.FTN.007\Documents\rs12-2011\rs12-2011\obj\Debug\rs12-2011.exe
 C:\Users\TEMP.FTN.007\Documents\rs12-2011\rs12-2011\obj\Debug\rs12-2011.pdb
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011\bin\Debug\rs12-2011.exe.config
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011\bin\Debug\rs12-2011.exe
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011\bin\Debug\rs12-2011.pdb
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011\obj\Debug\rs12-2011.csprojResolveAssemblyReference.cache
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011\obj\Debug\rs12-2011.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011\obj\Debug\rs12-2011.exe
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011\obj\Debug\rs12-2011.pdb
