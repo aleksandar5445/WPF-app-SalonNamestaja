@@ -27,12 +27,12 @@ namespace rs12_2011
             string unos = string.Empty;
             while (unos != "0")
             {
-                Console.WriteLine("Glavni Meni:");
-                Console.WriteLine("1 - Namestaji");
-                Console.WriteLine("2 - Akcije");
-                Console.WriteLine("3 - Korisnici");
-                Console.WriteLine("4 - Prodaja");
-                Console.WriteLine("0 - Izlaz");
+                Console.WriteLine("======= GLAVNI MENI =======");
+                Console.WriteLine("1 - NAMESTAJI");
+                Console.WriteLine("2 - AKCIJE");
+                Console.WriteLine("3 - KORISNICI");
+                Console.WriteLine("4 - PRODAJA");
+                Console.WriteLine("0 - IZLAZ");
 
                 unos = Console.ReadLine();
                 switch (unos)

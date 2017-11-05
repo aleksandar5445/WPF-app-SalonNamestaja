@@ -7,6 +7,7 @@ namespace rs12_2011.model
         public Salon()
         {
             Magacin = new List<Namestaj>();
+            Korisnici = new List<Korisnik>();
             Aktivan = true;
         }
 
@@ -21,5 +22,6 @@ namespace rs12_2011.model
         public bool Aktivan { get; set; }
 
         public List<Namestaj> Magacin { get; set; }
+        public List<Korisnik> Korisnici { get; set;}
     }
 }

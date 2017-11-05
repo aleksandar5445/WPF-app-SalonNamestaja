@@ -50,12 +50,12 @@ namespace rs12_2011
 
         public void StanjeUMagacinu()
         {
-            Console.WriteLine($"------ Magacin salona {salon.Naziv} ------");
+            Console.WriteLine($"------ MAGACIN SALONA - {salon.Naziv} ------");
             foreach (var namestaj in salon.Magacin)
             {
-                Console.WriteLine($"{namestaj.Naziv} {namestaj.Sifra} {namestaj.TipNamestaja} {namestaj.JedinicnaCena} {namestaj.KolicinaUMagacinu} {namestaj.Aktivan}");
+                Console.WriteLine($" Naziv Namestaja: {namestaj.Naziv}\n Sifra Namestaja: {namestaj.Sifra}\n Tip Namestaja: {namestaj.TipNamestaja}\n Jedinicna Cena: {namestaj.JedinicnaCena}\n Kolicina u magacinu: {namestaj.KolicinaUMagacinu}\n Aktivan-Neaktivan: {namestaj.Aktivan}");
             }
-            Console.WriteLine($"------ Kraj ------");
+            Console.WriteLine($"------ MAGACIN ------");
         }
 
         public void NoviNamestaj()
@@ -91,7 +91,7 @@ namespace rs12_2011
         private void BrisanjeNamestaja()
         {
             Console.WriteLine($"------ Brisanje namsetaja ------");
-
+            StanjeUMagacinu();
             Console.WriteLine($"Unesite sifru namestaja koji zelite da obrisete:");
             var sifra = Console.ReadLine();
 
@@ -109,7 +109,7 @@ namespace rs12_2011
                 Console.WriteLine($"Namestaj sa sifrom {sifra} nije pronadjen");
                 Console.WriteLine($"------ Kraj ------");
             }
-
+            Console.WriteLine($"Namestaj sa sifrom {sifra} je obrisan.");
             salon.Magacin.Remove(n);
 
             Console.WriteLine($"------ Kraj ------");
@@ -117,11 +117,10 @@ namespace rs12_2011
 
         private void IzmenaNamestaja()
         {
-            Console.WriteLine($"------ Izmena namsetaja ------");
-
-            Console.WriteLine($"Unesite sifru namestaja koji zelite da obrisete:");
+            Console.WriteLine($"------ Izmena namestaja ------");
+            StanjeUMagacinu();
+            Console.WriteLine($"Unesite sifru namestaja koji zelite da Izmenite:");
             var sifra = Console.ReadLine();
-
             Console.WriteLine("Novi naziv: ");
             var naziv = Console.ReadLine();
             Console.WriteLine("Novi tip: ");
