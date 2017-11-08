@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace rs12_2011.model
 {
@@ -7,7 +8,9 @@ namespace rs12_2011.model
         public Salon()
         {
             Magacin = new List<Namestaj>();
+            Korpa = new List<Tuple<Namestaj, int>>();
             Korisnici = new List<Korisnik>();
+
             Aktivan = true;
         }
 
@@ -23,5 +26,6 @@ namespace rs12_2011.model
 
         public List<Namestaj> Magacin { get; set; }
         public List<Korisnik> Korisnici { get; set;}
+        public List<Tuple<Namestaj, int>> Korpa { get; set; }
     }
 }

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml;
 using System.Xml.Serialization;
 namespace rs12_2011.Util
 {
     public static class GenericSerializer
     {
-        public static void Serialize<T>(string path, List<T> listToSerialize)
+        public static void Serialize<T>(string path, T listToSerialize)
         {
             try
             {
@@ -16,17 +17,19 @@ namespace rs12_2011.Util
                     serializer.Serialize(sw, listToSerialize);
                 }
             }
-            catch
+            catch(Exception e)
             {
+                Console.WriteLine($"ERROR: {e.Message}");               
             }
 
         }
-        private static List<T> Deserialize<T>(string outputPath)
+
+        public static T Deserialize<T>(string outputPath)
         {
             var ser = new XmlSerializer(typeof(T));
             using (var reader = XmlReader.Create(outputPath))
             {
-                return (List<T>)ser.Deserialize(reader);
+                return (T)ser.Deserialize(reader);
             }
         }
 

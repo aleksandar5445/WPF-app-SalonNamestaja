@@ -1,4 +1,6 @@
 ﻿using rs12_2011.model;
+using System;
+using System.Collections.Generic;
 
 namespace rs12_2011
 {
@@ -8,21 +10,16 @@ namespace rs12_2011
         static void Main(string[] args)
         {
             var admin = new Administracija();
-            admin.Start();
-
-            var tp1 = new Namestaj()
+            try
             {
-                Sifra = "1",
-                Naziv = "Podna Lampa",
-
-            };
-            var n1 = new Namestaj()
+                admin.Start();
+            }
+            catch(Exception e)
             {
-                Sifra = "2",
-                Naziv = "Socijalno osvetljenje",
-                TipNamestaja = "Predsoblje",
-            };
-            Util.GenericSerializer.Serialize<Namestaj>("namestaj.xml");
+                Console.WriteLine($"General Error: {e.Message}");
+            }
+
+            Util.GenericSerializer.Serialize("namestaj.xml", admin.GetMagacin());
         }
     }
 }

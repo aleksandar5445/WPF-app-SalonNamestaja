@@ -46,13 +46,13 @@
     <Compile Include="Administracija.cs" />
     <Compile Include="AdministracijaKorisnika.cs" />
     <Compile Include="AdministracijaNamestaja.cs" />
+    <Compile Include="AdministracijaProdaje.cs" />
     <Compile Include="model\Akcija.cs" />
     <Compile Include="model\Korisnik.cs" />
     <Compile Include="model\Namestaj.cs" />
     <Compile Include="model\ProdajaNamestaja.cs" />
     <Compile Include="model\Salon.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Projekat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\GenericSerializer.cs" />
   </ItemGroup>

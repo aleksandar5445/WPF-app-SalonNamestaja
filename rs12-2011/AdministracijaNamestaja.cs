@@ -121,35 +121,29 @@ namespace rs12_2011
             StanjeUMagacinu();
             Console.WriteLine($"Unesite sifru namestaja koji zelite da Izmenite:");
             var sifra = Console.ReadLine();
-            Console.WriteLine("Novi naziv: ");
-            var naziv = Console.ReadLine();
-            Console.WriteLine("Novi tip: ");
-            var tip = Console.ReadLine();
-            Console.WriteLine("Nova cena: ");
-            var cena = Console.ReadLine();
-            Console.WriteLine("Nova kolicina u magacinu: ");
-            var kolicina = Console.ReadLine();
-
-            var nadjen = false;
             foreach (var namestaj in salon.Magacin)
             {
                 if (namestaj.Sifra == sifra)
                 {
-                    nadjen = true;
+                    Console.WriteLine("Novi naziv: ");
+                    var naziv = Console.ReadLine();
+                    Console.WriteLine("Novi tip: ");
+                    var tip = Console.ReadLine();
+                    Console.WriteLine("Nova cena: ");
+                    var cena = Console.ReadLine();
+                    Console.WriteLine("Nova kolicina u magacinu: ");
+                    var kolicina = Console.ReadLine();
                     namestaj.Naziv = naziv != string.Empty ? naziv : namestaj.Naziv;
                     namestaj.JedinicnaCena = cena != string.Empty ? decimal.Parse(cena) : namestaj.JedinicnaCena;
                     namestaj.KolicinaUMagacinu = kolicina != string.Empty ? long.Parse(kolicina) : namestaj.KolicinaUMagacinu;
                     namestaj.TipNamestaja = tip != string.Empty ? (TipNamestaja)Enum.Parse(typeof(TipNamestaja), tip) : namestaj.TipNamestaja;
                 }
+                else
+                {
+                    Console.WriteLine($"Namestaj sa sifrom {sifra} nije pronadjen");
+                    Console.WriteLine($"------ Kraj ------");
+                }
             }
-
-            if (!nadjen)
-            {
-                Console.WriteLine($"Namestaj sa sifrom {sifra} nije pronadjen");
-                Console.WriteLine($"------ Kraj ------");
-            }
-
-            Console.WriteLine($"------ Kraj ------");
         }
     }
 }

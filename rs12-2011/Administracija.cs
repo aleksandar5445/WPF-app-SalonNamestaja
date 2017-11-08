@@ -1,5 +1,6 @@
 ﻿using rs12_2011.model;
 using System;
+using System.Collections.Generic;
 
 namespace rs12_2011
 {
@@ -8,6 +9,7 @@ namespace rs12_2011
         private Salon salon = null;
         private AdministracijaNamestaja namestaji = null;
         private AdministracijaKorisnika korisnici = null;
+        private AdministracijaProdaje prodaje = null;
 
         public Administracija()
         {
@@ -20,6 +22,9 @@ namespace rs12_2011
 
             namestaji = new AdministracijaNamestaja(salon);
             korisnici = new AdministracijaKorisnika(salon);
+            prodaje = new AdministracijaProdaje(salon);
+
+            salon.Magacin = Util.GenericSerializer.Deserialize<List<Namestaj>>("namestaj.xml");
         }
 
         public void Start()
@@ -35,14 +40,28 @@ namespace rs12_2011
                 Console.WriteLine("0 - IZLAZ");
 
                 unos = Console.ReadLine();
-                switch (unos)
+                try
                 {
-                    case "1": namestaji.Namestaji(); break;
-                    case "3": korisnici.Korisnici(); break;
+                    switch (unos)
+                    {
+                        case "1": namestaji.Namestaji(); break;
+                        case "3": korisnici.Korisnici(); break;
+                        case "4": prodaje.Prodaja(); break;
+                    }
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine("Dogodila se greska u sistemu, molimo pokusajte ponovo");
+                    Console.WriteLine($"Detalji greske: {e.Message}");
                 }
 
             }
-        }        
+        }  
+        
+        public List<Namestaj> GetMagacin()
+        {
+            return salon.Magacin;
+        }
     }
 
     enum Akcije
