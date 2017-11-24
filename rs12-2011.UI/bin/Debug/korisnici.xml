@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfKorisnik xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Korisnik>
+    <Ime>aleksandar</Ime>
+    <Prezime>Dimitrov</Prezime>
+    <KorisnickoIme>aca</KorisnickoIme>
+    <Lozinka>123</Lozinka>
+    <TipKorisnika>Administrator</TipKorisnika>
+  </Korisnik>
+  <Korisnik>
+    <Ime>aleksandar</Ime>
+    <Prezime>dimitrov</Prezime>
+    <KorisnickoIme>coa123</KorisnickoIme>
+    <Lozinka>aca123</Lozinka>
+    <TipKorisnika>Administrator</TipKorisnika>
+  </Korisnik>
+</ArrayOfKorisnik>

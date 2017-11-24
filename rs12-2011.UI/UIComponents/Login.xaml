@@ -6,18 +6,30 @@
         xmlns:local="clr-namespace:rs12_2011.UI.UIComponents"
         xmlns:vm="clr-namespace:rs12_2011.UI.ViewModel"
         mc:Ignorable="d"
+        FocusManager.FocusedElement="{Binding ElementName=textBoxUserName}"
         d:DataContext="{d:DesignInstance vm:LoginViewModel}"
-    Title="Salon Namestaja" Height="350" Width="525">
-    <Grid>
-        <TextBlock Height="23" HorizontalAlignment="Left" Margin="65,46,0,0" Name="LogintextBlock" Text="Login:" VerticalAlignment="Top" FontSize="18" FontStretch="ExtraCondensed"/>
-        <TextBlock Height="23" FontSize="16"  HorizontalAlignment="Left" Margin="30,115,0,0" Name="userNametextBlock" Text="Korisnicko Ime:" VerticalAlignment="Top" Width="83" />
-        <TextBlock Height="23" FontSize="16"  HorizontalAlignment="Left" Margin="30,153,0,0" Name="passwordtextBlock" Text="Lozinka:" VerticalAlignment="Top" Width="77" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="118,115,0,0" x:Name="textBoxUserName" Text="{Binding KorisnickoIme}"  VerticalAlignment="Top" Width="247" />
-        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="118,153,0,0" Name="passwordBox" VerticalAlignment="Top" Width="247" />
-        <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="118,211,0,0" x:Name="LoginButton" VerticalAlignment="Top" Width="104" Click="LoginButton_Click"/>
-        <Button Content="Novi Korisnik" Height="23" HorizontalAlignment="Left" Margin="261,211,0,0" x:Name="Novi_korisnik" VerticalAlignment="Top" Width="104" Click="Novi_korisnik_Click"/>
-        <TextBlock x:Name="Poruka" Text="Neuspesno logovanje. Proverite korisnicko ime i lozinku." Foreground="Red" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="118,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247"/>
-
+    Title="Salon Namestaja" Height="400" Width="850">
+    <Grid Height="400" Width="850" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Padding="60" Name="LogintextBlock" Text="Login:" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Name="userNametextBlock" Text="Korisnicko Ime :" VerticalAlignment="Top" Width="124" Margin="30,121,0,0" />
+        <TextBlock FontSize="16"  HorizontalAlignment="Left" Margin="30,163,0,0" Name="passwordtextBlock" Text="Lozinka :" VerticalAlignment="Top" Width="77" />
+        <TextBox HorizontalAlignment="Left" Margin="159,121,0,0" x:Name="textBoxUserName" Text="{Binding KorisnickoIme}"  VerticalAlignment="Top" Width="247" />
+        <PasswordBox HorizontalAlignment="Left" Margin="159,164,0,0" Name="passwordBox" VerticalAlignment="Top" Width="247" />
+        <Button Content="Login" HorizontalAlignment="Left" Margin="159,234,0,0" x:Name="LoginButton" VerticalAlignment="Top" Width="104" Click="LoginButton_Click"/>
+        <Button Content="Novi Korisnik" HorizontalAlignment="Left" Margin="302,234,0,0" x:Name="Novi_korisnik" VerticalAlignment="Top" Width="104" Click="Novi_korisnik_Click"/>
+        <TextBlock x:Name="Poruka" Text="Neuspesno logovanje. Proverite korisnicko ime i lozinku." Foreground="Red" Visibility="Hidden" HorizontalAlignment="Left" Margin="118,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247"/>
+        <Grid Grid.Column="1">
+            <Grid.Background>
+                <ImageBrush Stretch="Fill" AlignmentX="Left" ImageSource="C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\Slike\login.jpg"/>
+            </Grid.Background>
+        </Grid>
     </Grid>
 
 </Window> 
