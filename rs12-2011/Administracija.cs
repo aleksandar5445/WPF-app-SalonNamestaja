@@ -10,7 +10,7 @@ namespace rs12_2011
         private AdministracijaNamestaja namestaji = null;
         private AdministracijaKorisnika korisnici = null;
         private AdministracijaProdaje prodaje = null;
-
+        private Korisnik korisnik = null;
         public Administracija()
         {
             salon = new Salon
@@ -19,13 +19,30 @@ namespace rs12_2011
                 Telefon = "telefon",
                 Naziv = "Salon1"
             };
-
+            korisnik = new Korisnik
+            {
+                Ime = "aleksandar",
+                Prezime = "Dimitrov",
+                Lozinka = "123",
+                KorisnickoIme = "aca",
+            };
             namestaji = new AdministracijaNamestaja(salon);
             korisnici = new AdministracijaKorisnika(salon);
             prodaje = new AdministracijaProdaje(salon);
-
             salon.Magacin = Util.GenericSerializer.Deserialize<List<Namestaj>>("namestaj.xml");
+            salon.Korisnici = Util.GenericSerializer.Deserialize<List<Korisnik>>("korisnici.xml");
+
+            if (salon.Magacin == null)
+            {
+                salon.Magacin = new List<Namestaj>();
+            }
+
+            if (salon.Korisnici == null || salon.Korisnici.Count == 0)
+            {
+                salon.Korisnici = new List<Korisnik>() { korisnik };
+            }
         }
+
 
         public void Start()
         {
@@ -58,9 +75,25 @@ namespace rs12_2011
             }
         }  
         
-        public List<Namestaj> GetMagacin()
+        //public List<Namestaj> GetMagacin()
+        //{
+        //    return salon.Magacin;
+        //}
+
+        //public List<Korisnik> GetKorisnici()
+        //{
+        //    return salon.Korisnici;
+        //}
+
+        public Salon GetSalon()
         {
-            return salon.Magacin;
+            return salon;
+        }
+
+        public void SnimiPodatke()
+        {
+            Util.GenericSerializer.Serialize("namestaj.xml", salon.Magacin);
+            Util.GenericSerializer.Serialize("korisnici.xml", salon.Korisnici);
         }
     }
 

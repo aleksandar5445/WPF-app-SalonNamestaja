@@ -1,4 +1,6 @@
-﻿namespace rs12_2011.model
+﻿using System.Xml.Serialization;
+
+namespace rs12_2011.model
 {
     public class Namestaj
     {
@@ -12,7 +14,7 @@
         public string Aktivan {
             get
             {
-                return aktivan? "Aktivan" : "Neaktivan";
+                return aktivan ? "Aktivan" : "Neaktivan";
             }
 
             set
@@ -20,7 +22,22 @@
                 aktivan = value == "Aktivan" ? true : false;
             }
         }
-    }
+        //[XmlIgnore]
+        //public TipNamestaja tipNamestaja
+        //{
+        //    get { 
+            //if(TipNamestaja==null){
+            //tipNamestaja.getByID(TipNamestaja);
+            //}
+            // return TipNamestaja;
+            // }
+        //    set {
+        //        tipNamestaja = value;
+        //        tipNamestaja = TipNamestaja.id;
+        //        OnPropertyChanged("tipNamestaja");
+                
+        //    }
+        }
 
     public enum TipNamestaja
     {

@@ -19,7 +19,8 @@ namespace rs12_2011
                 Console.WriteLine($"General Error: {e.Message}");
             }
 
-            Util.GenericSerializer.Serialize("namestaj.xml", admin.GetMagacin());
+            Util.GenericSerializer.Serialize("namestaj.xml", admin.GetSalon().Magacin);
+            Util.GenericSerializer.Serialize("korisnici.xml", admin.GetSalon().Korisnici);
         }
     }
 }

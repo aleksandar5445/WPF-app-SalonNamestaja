@@ -1,4 +1,5 @@
-﻿using rs12_2011.UI.ViewModel;
+﻿using rs12_2011.model;
+using rs12_2011.UI.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,11 @@ namespace rs12_2011.UI.UIComponents
             if (Mode == 1)
             {
                 tbSifra.IsEnabled = false;
+                this.Title = "Izmeni namestaj";
+                return;
             }
+
+            this.Title = "Novi namestaj";
         }
 
         private void Ok_Click(object sender, RoutedEventArgs e)

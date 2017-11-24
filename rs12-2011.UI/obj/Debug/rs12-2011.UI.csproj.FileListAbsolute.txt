@@ -18,3 +18,7 @@ C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\rs12-2011.UI
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\rs12-2011.UI.csproj.CoreCompileInputs.cache
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\rs12-2011.UI.exe
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\rs12-2011.UI.pdb
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\Login.g.cs
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\NoviKorisnik.g.cs
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\Login.baml
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\NoviKorisnik.baml

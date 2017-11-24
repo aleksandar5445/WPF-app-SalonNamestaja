@@ -1,0 +1,23 @@
+﻿<Window x:Class="rs12_2011.UI.UIComponents.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:rs12_2011.UI.UIComponents"
+        xmlns:vm="clr-namespace:rs12_2011.UI.ViewModel"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance vm:LoginViewModel}"
+    Title="Salon Namestaja" Height="350" Width="525">
+    <Grid>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="65,46,0,0" Name="LogintextBlock" Text="Login:" VerticalAlignment="Top" FontSize="18" FontStretch="ExtraCondensed"/>
+        <TextBlock Height="23" FontSize="16"  HorizontalAlignment="Left" Margin="30,115,0,0" Name="userNametextBlock" Text="Korisnicko Ime:" VerticalAlignment="Top" Width="83" />
+        <TextBlock Height="23" FontSize="16"  HorizontalAlignment="Left" Margin="30,153,0,0" Name="passwordtextBlock" Text="Lozinka:" VerticalAlignment="Top" Width="77" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="118,115,0,0" x:Name="textBoxUserName" Text="{Binding KorisnickoIme}"  VerticalAlignment="Top" Width="247" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="118,153,0,0" Name="passwordBox" VerticalAlignment="Top" Width="247" />
+        <Button Content="Login" Height="23" HorizontalAlignment="Left" Margin="118,211,0,0" x:Name="LoginButton" VerticalAlignment="Top" Width="104" Click="LoginButton_Click"/>
+        <Button Content="Novi Korisnik" Height="23" HorizontalAlignment="Left" Margin="261,211,0,0" x:Name="Novi_korisnik" VerticalAlignment="Top" Width="104" Click="Novi_korisnik_Click"/>
+        <TextBlock x:Name="Poruka" Text="Neuspesno logovanje. Proverite korisnicko ime i lozinku." Foreground="Red" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="118,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="247"/>
+
+    </Grid>
+
+</Window> 

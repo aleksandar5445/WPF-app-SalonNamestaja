@@ -21,6 +21,7 @@ namespace rs12_2011.UI
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
     public partial class MainWindow : Window
     {
         private AdministracijaNamestajaViewModel viewModel;
@@ -28,24 +29,14 @@ namespace rs12_2011.UI
         public MainWindow()
         {
             InitializeComponent();
-            viewModel = new AdministracijaNamestajaViewModel(KreirajSalon());
-            DataContext = viewModel;
-        }
-
-        private Salon KreirajSalon()
-        {
-            var salon = new Salon
-            {
-                Adresa = "Adresa1",
-                Telefon = "telefon",
-                Naziv = "Salon1"
-            };
 
             Closing += MainWindow_Closing;
+        }
 
-            salon.Magacin = Util.GenericSerializer.Deserialize<List<Namestaj>>("../../../rs12-2011.UI/bin/Debug/namestaj.xml");
-
-            return salon;
+        public void Init(Salon s)
+        {
+            viewModel = new AdministracijaNamestajaViewModel(s);
+            DataContext = viewModel;
         }
 
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)

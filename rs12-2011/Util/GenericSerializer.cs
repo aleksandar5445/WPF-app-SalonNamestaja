@@ -26,10 +26,17 @@ namespace rs12_2011.Util
 
         public static T Deserialize<T>(string outputPath)
         {
-            var ser = new XmlSerializer(typeof(T));
-            using (var reader = XmlReader.Create(outputPath))
+            try
             {
-                return (T)ser.Deserialize(reader);
+                var ser = new XmlSerializer(typeof(T));
+                using (var reader = XmlReader.Create(outputPath))
+                {
+                    return (T)ser.Deserialize(reader);
+                }
+            }
+            catch
+            {
+                return default(T);
             }
         }
 

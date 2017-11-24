@@ -20,15 +20,15 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Text="Naziv:" />
+        <TextBlock FontSize="18" Grid.Row="0" Text="Naziv" HorizontalAlignment="Center" />
         <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Naziv}" />
-        <TextBlock Grid.Row="1" Text="Sifra:" />
+        <TextBlock FontSize="18" Grid.Row="1" Text="Sifra" HorizontalAlignment="Center" />
         <TextBox Name="tbSifra" Grid.Row="1" Grid.Column="1" Text="{Binding Sifra}" />
-        <TextBlock Grid.Row="2" Text="Cena:" />
+        <TextBlock FontSize="18" Grid.Row="2" Text="Cena" HorizontalAlignment="Center" />
         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding JedinicnaCena}" />
-        <TextBlock Grid.Row="3" Text="Tip:" />
-        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding TipNamestaja}" />
-        <TextBlock Grid.Row="4" Text="Kolicina u magacinu:" />
+        <TextBlock FontSize="18" Grid.Row="3" Text="Tip Namestaja" HorizontalAlignment="Center" />
+        
+        <TextBlock FontSize="18" Grid.Row="4" Text="Kolicina " HorizontalAlignment="Center" />
         <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding KolicinaUMagacinu}" />
         <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <Grid>
@@ -42,5 +42,6 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
+        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

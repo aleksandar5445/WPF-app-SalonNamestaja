@@ -1,0 +1,39 @@
+﻿<Window x:Class="rs12_2011.UI.UIComponents.NoviKorisnik"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:rs12_2011.UI.UIComponents"
+         xmlns:vm="clr-namespace:rs12_2011.UI.ViewModel"
+        mc:Ignorable="d"
+         d:DataContext="{d:DesignInstance vm:NoviKorisnikViewModel}"
+                Title="Registracija" Height="450" Width="550">
+    <Grid Margin="0,0,-8,-30" >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="65,10,0,0" Name="textBlockHeading" Text="Registracija :" VerticalAlignment="Top" Width="110"  FontSize="17" FontStretch="ExtraCondensed"/>
+        <Grid Margin="30,0,30,138" Background="White" Height="264" VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="252*" />
+            </Grid.RowDefinitions>
+            <TextBlock Height="23" FontSize="16" HorizontalAlignment="Left" Margin="35,20,0,0" Name="textBlockIme" Text="Ime" VerticalAlignment="Top" Width="110" />
+            <TextBlock Height="23" FontSize="16" HorizontalAlignment="Left" Margin="35,52,0,0" Name="textBlockPrezime" Text="Prezime" VerticalAlignment="Top" Width="110" />
+            <TextBlock Height="23" FontSize="16" HorizontalAlignment="Left" Margin="35,80,0,0" Name="KorisnickoIme" Text="Korisnicko Ime" VerticalAlignment="Top" Width="110" />
+            <TextBlock Height="23" FontSize="16" HorizontalAlignment="Left" Margin="35,107,0,0" Name="textBlockPassword" Text="Password" VerticalAlignment="Top" Width="110"  />
+            <TextBlock Height="23" FontSize="16" HorizontalAlignment="Left" Margin="35,136,0,0" Name="textBlockPassword2" Text="Ponovite Password" VerticalAlignment="Top" Width="142" />
+            <TextBlock Height="23" FontSize="16" HorizontalAlignment="Left" Margin="35,164,0,0" Name="TipKorisnika" Text="TipKorisnika" VerticalAlignment="Top" Width="110" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="183,20,0,0" Name="Ime" Text="{Binding Ime}" VerticalAlignment="Top" Width="222" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="183,50,0,0" Name="Prezime" Text="{Binding Prezime}" VerticalAlignment="Top" Width="222" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="183,80,0,0" Name="Korisnicko_ime" Text="{Binding KorisnickoIme}" VerticalAlignment="Top" Width="222" />
+            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,107,0,0" Name="passwordBox1" VerticalAlignment="Top" Width="222" />
+            <ComboBox ItemsSource="{Binding TipoviKorisnika}" SelectedItem="{Binding TipKorisnika}" HorizontalAlignment="Left" Margin="183,164,0,0" VerticalAlignment="Top" Width="120"/>
+            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="183,136,0,0" x:Name="passwordBoxPonovo" VerticalAlignment="Top" Width="222" />
+        </Grid>
+        <Button Content="Izlaz" Height="23" HorizontalAlignment="Left" Margin="405,380,0,0" x:Name="IzlazButton" VerticalAlignment="Top" Width="104" Click="IzlazButton_Click"/>
+        <Button Content="Novi Korisnik" Height="23" HorizontalAlignment="Left" Margin="267,380,0,0" x:Name="Novi_korisnik" VerticalAlignment="Top" Width="104" Click="Novi_korisnik_Click"/>
+        <TextBlock Name="tbPoruka" HorizontalAlignment="Left" Height="23" Margin="214,289,0,0" TextWrapping="Wrap" Text="" Foreground="Red" VerticalAlignment="Top" Width="222"/>
+
+    </Grid>
+
+</Window>

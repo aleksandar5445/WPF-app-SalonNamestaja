@@ -7,6 +7,30 @@ using System.Threading.Tasks;
 
 namespace rs12_2011
 {
+    public class Login
+    {
+        private Administracija administracija = new Administracija();
+        private Salon salon = null;
+
+        public void ProveraKorisnika()
+        {
+            Console.WriteLine("Unesite vase korisnicko Ime: ");
+            var korisnickoIme=Console.ReadLine();
+            Console.WriteLine("Unesite vasu sifru: ");
+            var sifra=Console.ReadLine();
+            foreach (var korisnik in salon.Korisnici)
+            {
+                if (korisnik.KorisnickoIme == korisnickoIme || korisnik.Lozinka == sifra)
+                {
+                    administracija.Start();
+                }
+                else { Console.WriteLine("Pogresno korisnicko ime ili sifra molim pokusajte ponovo");
+                }
+                    
+
+            }
+        }
+    }
     public class AdministracijaKorisnika
     {
         private Akcije akcija = Akcije.Pocetak;
