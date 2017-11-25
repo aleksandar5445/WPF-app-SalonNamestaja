@@ -22,3 +22,5 @@ C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\NoviKorisnik.g.cs
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\Login.baml
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\NoviKorisnik.baml
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\GlavniMeni.g.cs
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\GlavniMeni.baml

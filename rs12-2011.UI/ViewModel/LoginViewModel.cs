@@ -11,7 +11,6 @@ namespace rs12_2011.UI.ViewModel
     public class LoginViewModel : INotifyPropertyChanged
     {
         private Salon salon;
-
         public LoginViewModel(Salon s)
         {
             salon = s;
