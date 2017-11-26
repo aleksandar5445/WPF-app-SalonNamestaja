@@ -34,6 +34,19 @@ namespace rs12_2011.UI.ViewModel
             return false;
         }
 
+        public Korisnik TrenutniKorisnik(string lozinka)
+        {
+            foreach (var k in salon.Korisnici)
+            {
+                if (k.KorisnickoIme == KorisnickoIme && k.Lozinka == lozinka)
+                {
+                    return k;
+                }
+            }
+
+            return null;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

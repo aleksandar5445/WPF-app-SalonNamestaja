@@ -24,6 +24,28 @@ namespace rs12_2011.UI
     /// 
     public partial class MainWindow : Window
     {
+        Administracija admin;
+        public MainWindow()
+        {
+            InitializeComponent();
+            admin = new Administracija();
+        }
+
+        public void Init(Administracija administracija)
+        {
+            admin = administracija;
+
+            LogovanKorisnik.Text = "  "+ admin.GetSalon().UlogovaniKorisnik.Ime +"  " + admin.GetSalon().UlogovaniKorisnik.Prezime +" Korisnicko Ime: "+ admin.GetSalon().UlogovaniKorisnik.KorisnickoIme+"  ";
+        }
+
+        private void Magacin_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new MagacinWindow();
+            window.Init(admin.GetSalon());
+            window.ShowDialog();
+
+        }
 
     }
+
 }

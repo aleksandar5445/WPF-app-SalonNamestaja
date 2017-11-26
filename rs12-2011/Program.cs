@@ -21,6 +21,7 @@ namespace rs12_2011
 
             Util.GenericSerializer.Serialize("namestaj.xml", admin.GetSalon().Magacin);
             Util.GenericSerializer.Serialize("korisnici.xml", admin.GetSalon().Korisnici);
+            Util.GenericSerializer.Serialize("akcije.xml", admin.GetSalon()._Akcije);
         }
     }
 }

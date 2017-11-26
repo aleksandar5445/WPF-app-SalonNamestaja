@@ -14,7 +14,7 @@ namespace rs12_2011.UI.UIComponents
 
         public MagacinWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         public void Init(Salon s)

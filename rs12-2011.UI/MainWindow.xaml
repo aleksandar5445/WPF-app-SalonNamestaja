@@ -21,13 +21,13 @@
         </Grid.Background>
         <Grid Grid.Row="1" Grid.ColumnSpan="3">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Width="235" FontWeight="Bold" Name="LogovanKorisnik" Text=" Korisnik: aleksandar Dimitrov" Opacity="0.65"/>
+                <TextBlock Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Width="auto" FontWeight="Bold" Name="LogovanKorisnik" Opacity="0.65"/>
                 <Button Content="Edit Korisnika" VerticalAlignment="Center" Width="110" HorizontalAlignment="Right" />
             </StackPanel>
         </Grid>
         <Grid Grid.Row="0" Grid.Column="0">
             <StackPanel>
-                <Button x:Name="Magacin" Content="Magacin" Margin="15" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button x:Name="Magacin" Content="Magacin" Margin="15" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Magacin_Click"/>
                 <Button Name="Akcija" Content="Akcija" Margin="15,2,15,15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
                 <Button Name="Prodaja" Content="Prodaja" Margin="15,2,15,15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
             </StackPanel>

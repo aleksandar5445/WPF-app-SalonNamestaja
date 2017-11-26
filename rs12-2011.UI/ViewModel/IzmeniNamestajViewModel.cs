@@ -8,16 +8,6 @@ using System.Threading.Tasks;
 
 namespace rs12_2011.UI.ViewModel
 {
-    //IClonoble
-    //public Object Clone()
-    //{
-    //    return new Namestaj()
-    //    {
-    //        id=id;
-    //    naziv = naziv;
-    //    cena = cena;
-    //    TipNamestaja = TipNamestaja;
-    //    }
     public class IzmeniNamestajViewModel : INotifyPropertyChanged
     {
         private AdministracijaNamestajaViewModel adminVM;

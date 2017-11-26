@@ -9,6 +9,17 @@ namespace rs12_2011.UI.UIComponents
     /// </summary>
     public partial class NoviKorisnik : Window
     {
+        public int Mode = 0;
+
+        public void Inicijalizacija()
+        {
+            if (Mode == 1)
+            {
+                this.Title = "Izmeni Korisnika";
+                return;
+            }
+        }
+
         Window parent;
         Salon salon;
         NoviKorisnikViewModel viewModel;

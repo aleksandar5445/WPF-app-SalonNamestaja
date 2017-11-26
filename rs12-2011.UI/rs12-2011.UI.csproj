@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UIComponents\AkcijeWindow.xaml.cs">
+      <DependentUpon>AkcijeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UIComponents\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -68,10 +71,13 @@
     <Compile Include="UIComponents\NoviKorisnik.xaml.cs">
       <DependentUpon>NoviKorisnik.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AdministracijaAkcijeViewModel.cs" />
     <Compile Include="ViewModel\AdministracijaKorisnikaViewModel.cs" />
     <Compile Include="ViewModel\AdministracijaNamestajaViewModel.cs" />
+    <Compile Include="ViewModel\IzmeniKorisnikaViewModel.cs" />
     <Compile Include="ViewModel\IzmeniNamestajViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\NovaAkcijaViewModel.cs" />
     <Compile Include="ViewModel\NoviKorisnikViewModel.cs" />
     <Compile Include="ViewModel\NoviNamestajViewModel.cs" />
     <Page Include="MainWindow.xaml">
@@ -86,6 +92,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UIComponents\AkcijeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UIComponents\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

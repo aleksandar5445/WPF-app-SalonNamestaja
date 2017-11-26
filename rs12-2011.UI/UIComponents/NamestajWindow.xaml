@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:rs12_2011.UI.ViewModel"
         mc:Ignorable="d"
-        Title="NoviNamestajWindow" Height="300" Width="300"
+        Title="NoviNamestajWindow" Height="350" Width="350"
         d:DataContext="{d:DesignInstance vm:NoviNamestajViewModel}">
     <Grid>
         <Grid.RowDefinitions>
@@ -26,8 +26,8 @@
         <TextBox Name="tbSifra" Grid.Row="1" Grid.Column="1" Text="{Binding Sifra}" />
         <TextBlock FontSize="18" Grid.Row="2" Text="Cena" HorizontalAlignment="Center" />
         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding JedinicnaCena}" />
-        <TextBlock FontSize="18" Grid.Row="3" Text="Tip Namestaja" HorizontalAlignment="Center" />
-        
+        <TextBlock FontSize="18" Grid.Row="3" Text="Tip Namestaja" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <ComboBox ItemsSource="{Binding TipoviNamestaja}" SelectedItem="{Binding TipNamestaja}" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Width="120"/>
         <TextBlock FontSize="18" Grid.Row="4" Text="Kolicina " HorizontalAlignment="Center" />
         <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding KolicinaUMagacinu}" />
         <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
@@ -42,6 +42,5 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
-        <ComboBox Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

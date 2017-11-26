@@ -14,4 +14,25 @@
     <Lozinka>aca123</Lozinka>
     <TipKorisnika>Administrator</TipKorisnika>
   </Korisnik>
+  <Korisnik>
+    <Ime>Ime1</Ime>
+    <Prezime>Prezime1</Prezime>
+    <KorisnickoIme>test</KorisnickoIme>
+    <Lozinka>123</Lozinka>
+    <TipKorisnika>Administrator</TipKorisnika>
+  </Korisnik>
+  <Korisnik>
+    <Ime>jovan</Ime>
+    <Prezime>Jovic</Prezime>
+    <KorisnickoIme>perica</KorisnickoIme>
+    <Lozinka>123</Lozinka>
+    <TipKorisnika>Administrator</TipKorisnika>
+  </Korisnik>
+  <Korisnik>
+    <Ime>Aleksandar</Ime>
+    <Prezime>Dimitrov</Prezime>
+    <KorisnickoIme>coa</KorisnickoIme>
+    <Lozinka>12345</Lozinka>
+    <TipKorisnika>Administrator</TipKorisnika>
+  </Korisnik>
 </ArrayOfKorisnik>

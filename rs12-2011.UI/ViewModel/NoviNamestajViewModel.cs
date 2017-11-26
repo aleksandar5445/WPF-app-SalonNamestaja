@@ -17,10 +17,13 @@ namespace rs12_2011.UI.ViewModel
         public NoviNamestajViewModel(AdministracijaNamestajaViewModel adm)
         {
             adminVM = adm;
+            TipoviNamestaja = new List<string> { "Kreveti", "Predsoblje", "Kuhinja" };
+            TipNamestaja = TipoviNamestaja[0];
         }
 
         public NoviNamestajViewModel() { }
 
+        public List<string> TipoviNamestaja { get; }
         public string Naziv { get; set; }
         public string Sifra { get; set; }
         public decimal JedinicnaCena { get; set; }
