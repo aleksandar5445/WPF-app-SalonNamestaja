@@ -57,7 +57,7 @@ namespace rs12_2011.UI.UIComponents
 
             if (uspesno)
             {
-                var window = new MainWindow();
+                var window = new MagacinWindow();
                 window.Init(admin.GetSalon());
                 this.Close();
                 window.ShowDialog();

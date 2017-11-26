@@ -24,47 +24,6 @@ namespace rs12_2011.UI
     /// 
     public partial class MainWindow : Window
     {
-        private AdministracijaNamestajaViewModel viewModel;
 
-        public MainWindow()
-        {
-            InitializeComponent();
-
-            Closing += MainWindow_Closing;
-        }
-
-        public void Init(Salon s)
-        {
-            viewModel = new AdministracijaNamestajaViewModel(s);
-            DataContext = viewModel;
-        }
-
-        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Util.GenericSerializer.Serialize("../../../rs12-2011.UI/bin/Debug/namestaj.xml", viewModel.Magacin.ToList());
-        }
-
-        private void NoviNamestaj_Click(object sender, RoutedEventArgs e)
-        {
-            var window = new NoviNamestajWindow() { DataContext = new NoviNamestajViewModel(viewModel) };
-            window.ShowDialog();
-        }
-
-        private void ObrisiNamestaj_Click(object sender, RoutedEventArgs e)
-        {
-            viewModel.ObrisiNamestaj((Namestaj)MagacinGrid.SelectedItem);
-        }
-
-        private void IzmeniNamestaj_Click(object sender, RoutedEventArgs e)
-        {
-            var selektovan = (Namestaj)MagacinGrid.SelectedItem;
-
-            if (selektovan != null)
-            {
-                var window = new NoviNamestajWindow() { DataContext = new IzmeniNamestajViewModel(viewModel, selektovan), Mode = 1 };
-                window.Inicijalizacija();
-                window.ShowDialog();
-            }            
-        }
     }
 }

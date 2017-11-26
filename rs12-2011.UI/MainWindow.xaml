@@ -3,28 +3,46 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm="clr-namespace:rs12_2011.UI.ViewModel"
+        xmlns:local="clr-namespace:rs12_2011.UI.UIComponents"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525"
-        d:DataContext="{d:DesignInstance vm:AdministracijaNamestajaViewModel}">
+        Title="GlavniMeni" Height="420" Width="960">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="leva" Width="130*"/>
+            <ColumnDefinition Width="707*"/>
+            <ColumnDefinition x:Name="desna" Width="130*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="56*"/>
+            <RowDefinition x:Name="button" Height="9*"/>
         </Grid.RowDefinitions>
-        <DataGrid Name="MagacinGrid" ItemsSource="{Binding Magacin}" />
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50" />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <StackPanel Orientation="Horizontal">
-                    <Button Margin="10" Name="NoviNamestaj" Content="Novi Namestaj" Click="NoviNamestaj_Click"/>
-                    <Button Margin="10" Name="ObrisiNamestaj" Content="Obrisi Namestaj" Click="ObrisiNamestaj_Click" />
-                    <Button Margin="10" Name="IzmeniNamestaj" Content="Izmeni Namestaj" Click="IzmeniNamestaj_Click" />
-                </StackPanel>
-            </Grid>
-        </StackPanel>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\Slike\GlavniMeni.jpg"/>
+        </Grid.Background>
+        <Grid Grid.Row="1" Grid.ColumnSpan="3">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Width="235" FontWeight="Bold" Name="LogovanKorisnik" Text=" Korisnik: aleksandar Dimitrov" Opacity="0.65"/>
+                <Button Content="Edit Korisnika" VerticalAlignment="Center" Width="110" HorizontalAlignment="Right" />
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <StackPanel>
+                <Button x:Name="Magacin" Content="Magacin" Margin="15" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button Name="Akcija" Content="Akcija" Margin="15,2,15,15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
+                <Button Name="Prodaja" Content="Prodaja" Margin="15,2,15,15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.RowSpan="2" Grid.Column="2">
+            <Grid.Background>
+                <ImageBrush/>
+            </Grid.Background>
+            <Button Name="Korpa" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+                <Image Source="C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\Slike\korpa.png" Stretch="Uniform"/>
+            </Button>
+        </Grid>
+
     </Grid>
 </Window>

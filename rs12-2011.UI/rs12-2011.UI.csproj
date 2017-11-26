@@ -56,11 +56,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="UIComponents\GlavniMeni.xaml.cs">
-      <DependentUpon>GlavniMeni.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UIComponents\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIComponents\MagacinWindow.xaml.cs">
+      <DependentUpon>MagacinWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UIComponents\NamestajWindow.xaml.cs">
       <DependentUpon>NamestajWindow.xaml</DependentUpon>
@@ -70,7 +70,6 @@
     </Compile>
     <Compile Include="ViewModel\AdministracijaKorisnikaViewModel.cs" />
     <Compile Include="ViewModel\AdministracijaNamestajaViewModel.cs" />
-    <Compile Include="ViewModel\GlavniMeniViewModel.cs" />
     <Compile Include="ViewModel\IzmeniNamestajViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\NoviKorisnikViewModel.cs" />
@@ -87,11 +86,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UIComponents\GlavniMeni.xaml">
+    <Page Include="UIComponents\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UIComponents\Login.xaml">
+    <Page Include="UIComponents\MagacinWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

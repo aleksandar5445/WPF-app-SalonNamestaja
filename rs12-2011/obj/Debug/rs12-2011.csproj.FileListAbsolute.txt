@@ -13,4 +13,3 @@ C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011\bin\Debug\rs12-2011.pdb
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011\obj\Debug\rs12-2011.csproj.CoreCompileInputs.cache
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011\obj\Debug\rs12-2011.exe
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011\obj\Debug\rs12-2011.pdb
-C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011\obj\Debug\rs12-2011.csprojResolveAssemblyReference.cache

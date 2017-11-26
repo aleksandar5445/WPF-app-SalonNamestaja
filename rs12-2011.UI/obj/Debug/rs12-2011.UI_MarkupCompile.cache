@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\App.xaml
-5-1165844849
+5-302329945
 
-16-1010812680
+15-520169466
 1645126927
-MainWindow.xaml;UIComponents\GlavniMeni.xaml;UIComponents\Login.xaml;UIComponents\NamestajWindow.xaml;UIComponents\NoviKorisnik.xaml;
+MainWindow.xaml;UIComponents\Login.xaml;UIComponents\MagacinWindow.xaml;UIComponents\NamestajWindow.xaml;UIComponents\NoviKorisnik.xaml;
 
 False
 
