@@ -1,0 +1,52 @@
+﻿<Window x:Class="rs12_2011.UI.UIComponents.NovaAkcijaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:rs12_2011.UI.ViewModel"
+        mc:Ignorable="d"
+        Title="NovaAkcijaWindow" Height="500" Width="500"
+        d:DataContext="{d:DesignInstance vm:NovaAkcijaViewModel}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="50"/>
+            <RowDefinition MaxHeight="50"/>
+            <RowDefinition MaxHeight="50"/>            
+            <RowDefinition MaxHeight="50"/>
+            <RowDefinition MinHeight="150"/>
+            <RowDefinition MaxHeight="50"/>
+            <RowDefinition MaxHeight="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock FontSize="18" Grid.Row="0" Text="Naziv" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <TextBox Grid.Row="0" Grid.Column="1" Name="tbNaziv" Text="{Binding Naziv}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150"/>
+        <TextBlock FontSize="18" Grid.Row="1" Text="Datum Pocetka" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <DatePicker Grid.Row="1" Grid.Column="1" SelectedDate="{Binding DatumPocetka, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock FontSize="18" Grid.Row="2" Text="Datum Kraja" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <DatePicker Grid.Row="2" Grid.Column="2" SelectedDate="{Binding DatumKraja, Mode=TwoWay}" HorizontalAlignment="left" VerticalAlignment="Center"/>
+        <TextBlock FontSize="18" Grid.Row="3" Text="Popusti:" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <DataGrid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Popusti}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Sifra" Width="SizeToHeader" Binding="{Binding Item1}"/>
+                <DataGridTextColumn Header="Kolicina" Width="SizeToHeader" Binding="{Binding Item2}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal">
+            <TextBlock FontSize="18" Grid.Row="0" Text="Sifra" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SifraPopusta}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+            <TextBlock FontSize="18" Grid.Row="0" Text="Kolicina" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding PopustKolicina}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150"/>
+            <Button Margin="10" Padding="5" x:Name="DodajPopust" Content="DodajPopust" Click="DodajPopust_Click"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Grid.Column="1" Margin="61,0,-20,0" Grid.Row="6">
+            <Button Margin="10" Padding="5" x:Name="Ok" Content="OK" Click="Ok_Click"/>
+            <Button Margin="10" x:Name="Nazad" Content="Nazad" Click="Nazad_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

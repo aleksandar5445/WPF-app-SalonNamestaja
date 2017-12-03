@@ -1,5 +1,4 @@
-﻿using rs12_2011.model;
-using rs12_2011.UI.ViewModel;
+﻿using rs12_2011.UI.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,37 +16,46 @@ using System.Windows.Shapes;
 namespace rs12_2011.UI.UIComponents
 {
     /// <summary>
-    /// Interaction logic for NoviNamestajWindow.xaml
+    /// Interaction logic for NovaAkcijaWindow.xaml
     /// </summary>
-    public partial class NoviNamestajWindow : Window
+    public partial class NovaAkcijaWindow : Window
     {
-        public int Mode = 0; // 0 - create     1 - update
-        public NoviNamestajWindow()
+        public NovaAkcijaWindow()
         {
             InitializeComponent();
         }
 
-        public void Inicijalizacija()
-        {
-            if (Mode == 1)
-            {
-                tbSifra.IsEnabled = false;
-                this.Title = "Izmeni namestaj";
-                return;
-            }
+        public int Mode { get; set; }
 
-            this.Title = "Novi namestaj";
+        public void Init()
+        {
+            if(Mode == 1)
+            {
+                tbNaziv.IsReadOnly = true;
+            }
+        }
+
+        private void DodajPopust_Click(object sender, RoutedEventArgs e)
+        {
+            if (Mode == 0)
+            {
+                ((NovaAkcijaViewModel)DataContext).KreirajPopust();
+            }
+            else
+            {
+                ((IzmeniAkcijeViewModel)DataContext).KreirajPopust();
+            }
         }
 
         private void Ok_Click(object sender, RoutedEventArgs e)
         {
             if (Mode == 0)
             {
-                ((NoviNamestajViewModel)DataContext).KreirajNoviNamestaj();
+                ((NovaAkcijaViewModel)DataContext).KreirajAkciju();
             }
             else
             {
-                ((IzmeniNamestajViewModel)DataContext).IzmeniNamestaj();
+                ((IzmeniAkcijeViewModel)DataContext).IzmeniAkciju();
             }
 
             this.Close();
@@ -55,7 +63,7 @@ namespace rs12_2011.UI.UIComponents
 
         private void Nazad_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+
         }
     }
 }

@@ -28,7 +28,7 @@
         <Grid Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Button x:Name="Magacin" Content="Magacin" Margin="15" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Magacin_Click"/>
-                <Button Name="Akcija" Content="Akcija" Margin="15,2,15,15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
+                <Button Name="Akcija" Content="Akcija" Margin="15,2,15,15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Click="Akcija_Click"/>
                 <Button Name="Prodaja" Content="Prodaja" Margin="15,2,15,15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
             </StackPanel>
         </Grid>

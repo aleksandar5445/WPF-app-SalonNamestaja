@@ -68,12 +68,16 @@
     <Compile Include="UIComponents\NamestajWindow.xaml.cs">
       <DependentUpon>NamestajWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UIComponents\NovaAkcijaWindow.xaml.cs">
+      <DependentUpon>NovaAkcijaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UIComponents\NoviKorisnik.xaml.cs">
       <DependentUpon>NoviKorisnik.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AdministracijaAkcijeViewModel.cs" />
     <Compile Include="ViewModel\AdministracijaKorisnikaViewModel.cs" />
     <Compile Include="ViewModel\AdministracijaNamestajaViewModel.cs" />
+    <Compile Include="ViewModel\IzmeniAkcijeViewModel.cs" />
     <Compile Include="ViewModel\IzmeniKorisnikaViewModel.cs" />
     <Compile Include="ViewModel\IzmeniNamestajViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
@@ -105,6 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UIComponents\NamestajWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIComponents\NovaAkcijaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

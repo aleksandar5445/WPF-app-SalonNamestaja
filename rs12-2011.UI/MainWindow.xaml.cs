@@ -46,6 +46,12 @@ namespace rs12_2011.UI
 
         }
 
+        private void Akcija_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new AkcijeWindow();
+            window.Init(admin.GetSalon());
+            window.ShowDialog();
+        }
     }
 
 }

@@ -18,6 +18,8 @@ namespace rs12_2011.UI.ViewModel
         {
             adminVM = adm;
 
+            TipoviNamestaja = new List<string> { "Kreveti", "Predsoblje", "Kuhinja" };
+            TipNamestaja = TipoviNamestaja[0];
             Naziv = sel.Naziv;
             Sifra = sel.Sifra;
             JedinicnaCena = sel.JedinicnaCena;
@@ -27,6 +29,7 @@ namespace rs12_2011.UI.ViewModel
 
         public IzmeniNamestajViewModel() { }
 
+        public List<string> TipoviNamestaja { get;}
         public string Naziv { get; set; }
         public string Sifra { get; set; }
         public decimal JedinicnaCena { get; set; }

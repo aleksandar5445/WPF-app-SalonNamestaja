@@ -38,6 +38,11 @@ namespace rs12_2011
                 salon.Magacin = new List<Namestaj>();
             }
 
+            if (salon._Akcije == null)
+            {
+                salon._Akcije = new List<Akcija>();
+            }
+
             if (salon.Korisnici == null || salon.Korisnici.Count == 0)
             {
                 salon.Korisnici = new List<Korisnik>() { korisnik };

@@ -1,4 +1,5 @@
 ﻿using rs12_2011.model;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
@@ -12,6 +13,7 @@ namespace rs12_2011.UI.ViewModel
         {
             salon = s;
             akcije = new ObservableCollection<Akcija>(salon._Akcije);
+            SelektovaniPopusti = new ObservableCollection<Tuple<string, int>>();
         }
         public AdministracijaAkcijeViewModel()
         {
@@ -24,15 +26,26 @@ namespace rs12_2011.UI.ViewModel
                 return akcije;
             }
         }
-        public Akcija SelektovanaAkcija
+        //public Akcija SelektovanaAkcija
+        //{
+        //    get
+        //    {
+        //        return SelektovanaAkcija;
+        //    }
+        //    set
+        //    {
+        //        SelektovanaAkcija = value;
+        //    }
+        //}
+
+        public ObservableCollection<Tuple<string, int>> SelektovaniPopusti { get; set; }
+
+        public void PostaviPopuste(Akcija sel)
         {
-            get
+            SelektovaniPopusti.Clear();
+            foreach(var p in sel.Popusti)
             {
-                return SelektovanaAkcija;
-            }
-            set
-            {
-                SelektovanaAkcija = value;
+                SelektovaniPopusti.Add(new Tuple<string, int>(p.Key, p.Value));
             }
         }
 

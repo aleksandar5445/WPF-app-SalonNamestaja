@@ -35,4 +35,18 @@
     <Lozinka>12345</Lozinka>
     <TipKorisnika>Administrator</TipKorisnika>
   </Korisnik>
+  <Korisnik>
+    <Ime>pera</Ime>
+    <Prezime>peric</Prezime>
+    <KorisnickoIme>pera</KorisnickoIme>
+    <Lozinka>pera</Lozinka>
+    <TipKorisnika>Prodavac</TipKorisnika>
+  </Korisnik>
+  <Korisnik>
+    <Ime>aleksandar</Ime>
+    <Prezime>Dimitrov</Prezime>
+    <KorisnickoIme>aca123</KorisnickoIme>
+    <Lozinka>aca123</Lozinka>
+    <TipKorisnika>Administrator</TipKorisnika>
+  </Korisnik>
 </ArrayOfKorisnik>

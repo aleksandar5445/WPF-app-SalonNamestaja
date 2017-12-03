@@ -1,8 +1,10 @@
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\rs12-2011.UI.csprojResolveAssemblyReference.cache
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\MainWindow.g.cs
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\AkcijeWindow.g.cs
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\Login.g.cs
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\MagacinWindow.g.cs
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\NamestajWindow.g.cs
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\NovaAkcijaWindow.g.cs
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\NoviKorisnik.g.cs
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\App.g.cs
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\rs12-2011.UI_MarkupCompile.cache
@@ -14,9 +16,11 @@ C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\bin\Debug\rs12-2011.ex
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\bin\Debug\rs12-2011.pdb
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\bin\Debug\rs12-2011.exe.config
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\MainWindow.baml
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\AkcijeWindow.baml
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\Login.baml
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\MagacinWindow.baml
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\NamestajWindow.baml
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\NovaAkcijaWindow.baml
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\NoviKorisnik.baml
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\rs12-2011.UI.g.resources
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\rs12_2011.UI.Properties.Resources.resources
@@ -24,5 +28,3 @@ C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\rs12-2011.UI
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\rs12-2011.UI.csproj.CoreCompileInputs.cache
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\rs12-2011.UI.exe
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\rs12-2011.UI.pdb
-C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\AkcijeWindow.g.cs
-C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\AkcijeWindow.baml

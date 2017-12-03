@@ -1,5 +1,6 @@
 ﻿using rs12_2011.model;
 using rs12_2011.UI.ViewModel;
+using System.Collections;
 using System.Linq;
 using System.Windows;
 
@@ -10,6 +11,8 @@ namespace rs12_2011.UI.UIComponents
     /// </summary>
     public partial class MagacinWindow : Window
     {
+        ICollection view;
+
         private AdministracijaNamestajaViewModel viewModel;
 
         public MagacinWindow()
@@ -30,7 +33,7 @@ namespace rs12_2011.UI.UIComponents
 
         private void NoviNamestaj_Click(object sender, RoutedEventArgs e)
         {
-            var window = new NoviNamestajWindow() { DataContext = new NoviNamestajViewModel(viewModel) };
+            var window = new NoviNamestajWindow() { DataContext = new NoviNamestajViewModel(viewModel), Mode = 0 };
             window.ShowDialog();
         }
 
@@ -52,3 +55,6 @@ namespace rs12_2011.UI.UIComponents
         }
     }
 }
+
+//yourComboBox.ItemSource=enum.GetValues(typeof(effectstyle)).cast<effectstyle>();
+//objectdataProvider
