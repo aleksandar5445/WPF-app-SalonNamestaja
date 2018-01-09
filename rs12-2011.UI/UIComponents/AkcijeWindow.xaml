@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:rs12_2011.UI.ViewModel"
         mc:Ignorable="d"
-        Title="Akcije u Salonu Namestaja" Height="300" Width="300"
+        ResizeMode="NoResize"
+        Title="Akcije u Salonu Namestaja" Height="400" Width="450"
         d:DataContext="{d:DesignInstance vm:AdministracijaAkcijeViewModel}"
         >
     <Grid>
@@ -19,8 +20,8 @@
             <TextBlock FontSize="18" Grid.Row="3" Text="Popusti:" VerticalAlignment="Center" HorizontalAlignment="Left"/>
             <DataGrid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding SelektovaniPopusti}" AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Sifra" Width="SizeToHeader" Binding="{Binding Item1}"/>
-                    <DataGridTextColumn Header="Kolicina" Width="SizeToHeader" Binding="{Binding Item2}"/>
+                    <DataGridTextColumn Header="Sifra" Width="*" Binding="{Binding Item1}" CanUserResize="False" CanUserReorder="False" />
+                    <DataGridTextColumn Header="Kolicina" Width="*" Binding="{Binding Item2}" CanUserResize="False" CanUserReorder="False"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

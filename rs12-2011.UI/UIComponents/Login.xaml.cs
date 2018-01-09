@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 using rs12_2011.UI.ViewModel;
+using rs12_2011.UI.DataAccess;
+using rs12_2011.model;
 
 namespace rs12_2011.UI.UIComponents
 {
@@ -8,16 +10,20 @@ namespace rs12_2011.UI.UIComponents
     /// </summary>
     public partial class Login : Window
     {
-        Administracija admin;
+        //Administracija admin;
+        DatabaseAccess db;
+        Salon salon;
         LoginViewModel viewModel;
 
         public Login()
         {
             InitializeComponent();
 
-            admin = new Administracija();
+            //admin = new Administracija();
+            db = new DatabaseAccess();
+            salon = db.GetSalon();
 
-            viewModel = new LoginViewModel(admin.GetSalon());
+            viewModel = new LoginViewModel(salon);
             DataContext = viewModel;
 
             Closing += Login_Closing;
@@ -25,13 +31,13 @@ namespace rs12_2011.UI.UIComponents
 
         private void Login_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            admin.SnimiPodatke();
+            //admin.SnimiPodatke();
         }
 
         private void Novi_korisnik_Click(object sender, RoutedEventArgs e)
         {
             var window = new NoviKorisnik();
-            window.Init(this, admin.GetSalon());
+            window.Init(this, salon);
             this.Hide();
             window.Show();
         }
@@ -42,10 +48,10 @@ namespace rs12_2011.UI.UIComponents
 
             if (uspesno)
             {
-                admin.GetSalon().UlogovaniKorisnik = viewModel.TrenutniKorisnik(passwordBox.Password);
+                salon.UlogovaniKorisnik = viewModel.TrenutniKorisnik(passwordBox.Password);
 
                 var window = new MainWindow();
-                window.Init(admin);
+                window.Init(salon);
                 this.Close();
                 window.ShowDialog();
             }

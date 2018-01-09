@@ -48,6 +48,7 @@
     <Compile Include="AdministracijaNamestaja.cs" />
     <Compile Include="AdministracijaProdaje.cs" />
     <Compile Include="model\Akcija.cs" />
+    <Compile Include="model\IstorijaKupovine.cs" />
     <Compile Include="model\Korisnik.cs" />
     <Compile Include="model\Namestaj.cs" />
     <Compile Include="model\ProdajaNamestaja.cs" />

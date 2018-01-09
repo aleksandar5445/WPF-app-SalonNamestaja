@@ -24,24 +24,24 @@ namespace rs12_2011.UI
     /// 
     public partial class MainWindow : Window
     {
-        Administracija admin;
+        Salon salon;
         public MainWindow()
         {
             InitializeComponent();
-            admin = new Administracija();
+            //admin = new Administracija();
         }
 
-        public void Init(Administracija administracija)
+        public void Init(Salon s)
         {
-            admin = administracija;
+            salon = s;
 
-            LogovanKorisnik.Text = "  "+ admin.GetSalon().UlogovaniKorisnik.Ime +"  " + admin.GetSalon().UlogovaniKorisnik.Prezime +" Korisnicko Ime: "+ admin.GetSalon().UlogovaniKorisnik.KorisnickoIme+"  ";
+            LogovanKorisnik.Text = "  "+ salon.UlogovaniKorisnik.Ime +"  " + salon.UlogovaniKorisnik.Prezime +" Korisnicko Ime: "+ salon.UlogovaniKorisnik.KorisnickoIme+"  ";
         }
 
         private void Magacin_Click(object sender, RoutedEventArgs e)
         {
             var window = new MagacinWindow();
-            window.Init(admin.GetSalon());
+            window.Init(salon);
             window.ShowDialog();
 
         }
@@ -49,7 +49,14 @@ namespace rs12_2011.UI
         private void Akcija_Click(object sender, RoutedEventArgs e)
         {
             var window = new AkcijeWindow();
-            window.Init(admin.GetSalon());
+            window.Init(salon);
+            window.ShowDialog();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new NoviKorisnik();
+            window.Init(this, salon);
             window.ShowDialog();
         }
     }

@@ -9,6 +9,7 @@ namespace rs12_2011.UI.UIComponents
     /// </summary>
     public partial class NoviKorisnik : Window
     {
+        public int Mode = 0; // 0-create Korisnik 1-EDIT
         Window parent;
         Salon salon;
         NoviKorisnikViewModel viewModel;
@@ -17,6 +18,16 @@ namespace rs12_2011.UI.UIComponents
         {
             InitializeComponent();
             Closing += NoviKorisnik_Closing;
+        }
+
+        public void Inicijalizacija()
+        {
+            if (Mode == 1)
+            {
+                Korisnicko_ime.IsEnabled = false;
+                this.Title = "Izmeni Korisnika";
+                return;
+            }
         }
 
         private void NoviKorisnik_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -31,11 +42,6 @@ namespace rs12_2011.UI.UIComponents
 
             viewModel = new NoviKorisnikViewModel(salon);
             DataContext = viewModel;
-
-            //if(Korisnik.Tip == Prodavac)
-            //{
-            //    Ime.Visibility = Visibility.Collapsed;
-            //}
         }
 
         private void IzlazButton_Click(object sender, RoutedEventArgs e)

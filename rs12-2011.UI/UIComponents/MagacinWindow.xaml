@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:rs12_2011.UI.ViewModel"
         mc:Ignorable="d"
-        Title="Magacin" Height="350" Width="525"
+        ResizeMode="NoResize"
+        Title="Magacin" Height="350" Width="545"
         d:DataContext="{d:DesignInstance vm:AdministracijaNamestajaViewModel}">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition Height="auto" />
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <DataGrid Name="MagacinGrid" ItemsSource="{Binding Magacin}" />
+        <DataGrid CanUserResizeColumns="False" CanUserAddRows="False" CanUserReorderColumns="False" IsReadOnly="True" Name="MagacinGrid" ItemsSource="{Binding Magacin}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Grid>
+            <Grid Width="525">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50" />
                     <RowDefinition />
@@ -23,6 +24,10 @@
                     <Button Margin="10" Name="NoviNamestaj" Content="Novi Namestaj" Click="NoviNamestaj_Click"/>
                     <Button Margin="10" Name="ObrisiNamestaj" Content="Obrisi Namestaj" Click="ObrisiNamestaj_Click" />
                     <Button Margin="10" Name="IzmeniNamestaj" Content="Izmeni Namestaj" Click="IzmeniNamestaj_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Margin="10" Name="TipNamestaja" Content="Tipovi Namestaja" Click="TipNamestaja_Click"/>
+                <Button Margin="10" Width="45" Name="Izlaz" Content="Izlaz" HorizontalAlignment="Right"/>
                 </StackPanel>
             </Grid>
         </StackPanel>

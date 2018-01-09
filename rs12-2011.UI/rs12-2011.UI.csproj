@@ -34,9 +34,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +65,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataAccess\DatabaseAccess.cs" />
+    <Compile Include="Database\Akcija.cs" />
+    <Compile Include="Database\IstorijaKupovine.cs" />
+    <Compile Include="Database\Korisnik.cs" />
+    <Compile Include="Database\Namestaj.cs" />
+    <Compile Include="Database\Popusti.cs" />
+    <Compile Include="Database\Salon.cs" />
+    <Compile Include="Database\SalonDatabase.cs" />
+    <Compile Include="Database\TipKorisnika.cs" />
+    <Compile Include="Database\TipNamestaja.cs" />
     <Compile Include="UIComponents\AkcijeWindow.xaml.cs">
       <DependentUpon>AkcijeWindow.xaml</DependentUpon>
     </Compile>
@@ -73,6 +92,9 @@
     </Compile>
     <Compile Include="UIComponents\NoviKorisnik.xaml.cs">
       <DependentUpon>NoviKorisnik.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIComponents\TipNamestajaWindow.xaml.cs">
+      <DependentUpon>TipNamestajaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AdministracijaAkcijeViewModel.cs" />
     <Compile Include="ViewModel\AdministracijaKorisnikaViewModel.cs" />
@@ -120,6 +142,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UIComponents\TipNamestajaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -139,6 +165,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -154,8 +181,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DATA\" />
-    <Folder Include="Slike\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Slike\GlavniMeni.jpg" />
+    <Resource Include="Slike\korpa.png" />
+    <Resource Include="Slike\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\Scripts\CreBas.sql" />
+    <Content Include="Database\Scripts\seed.sql" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

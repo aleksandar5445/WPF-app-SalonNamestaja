@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:rs12_2011.UI.ViewModel"
         mc:Ignorable="d"
-        Title="NovaAkcijaWindow" Height="500" Width="500"
+        ResizeMode="NoResize"
+        FocusManager.FocusedElement="{Binding ElementName=tbNaziv}"
+        Title="NovaAkcijaWindow" Height="550" Width="415"
         d:DataContext="{d:DesignInstance vm:NovaAkcijaViewModel}">
     <Grid>
         <Grid.RowDefinitions>
@@ -28,10 +30,10 @@
         <TextBlock FontSize="18" Grid.Row="2" Text="Datum Kraja" VerticalAlignment="Center" HorizontalAlignment="Left"/>
         <DatePicker Grid.Row="2" Grid.Column="2" SelectedDate="{Binding DatumKraja, Mode=TwoWay}" HorizontalAlignment="left" VerticalAlignment="Center"/>
         <TextBlock FontSize="18" Grid.Row="3" Text="Popusti:" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-        <DataGrid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Popusti}" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Popusti}" AutoGenerateColumns="False" Height="150" Width="200" HorizontalAlignment="Left">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Sifra" Width="SizeToHeader" Binding="{Binding Item1}"/>
-                <DataGridTextColumn Header="Kolicina" Width="SizeToHeader" Binding="{Binding Item2}"/>
+                <DataGridTextColumn Header="Sifra" Width="*" Binding="{Binding Item1}" CanUserResize="False" CanUserReorder="False"/>
+                <DataGridTextColumn Header="Kolicina" Width="*" Binding="{Binding Item2}" CanUserResize="False" CanUserReorder="False"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal">
@@ -40,11 +42,12 @@
         </StackPanel>
         <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
             <TextBlock FontSize="18" Grid.Row="0" Text="Kolicina" HorizontalAlignment="Left" VerticalAlignment="Center" />
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding PopustKolicina}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150"/>
-            <Button Margin="10" Padding="5" x:Name="DodajPopust" Content="DodajPopust" Click="DodajPopust_Click"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding PopustKolicina}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="120"/>
         </StackPanel>
-
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Grid.Column="1" Margin="61,0,-20,0" Grid.Row="6">
+        <StackPanel Grid.Row="6" Grid.Column="0" VerticalAlignment="Bottom">
+            <Button Margin="15" HorizontalAlignment="Left" x:Name="DodajPopust" Content="DodajPopust" Click="DodajPopust_Click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="6">
             <Button Margin="10" Padding="5" x:Name="Ok" Content="OK" Click="Ok_Click"/>
             <Button Margin="10" x:Name="Nazad" Content="Nazad" Click="Nazad_Click"/>
         </StackPanel>

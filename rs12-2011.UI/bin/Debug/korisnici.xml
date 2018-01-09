@@ -49,4 +49,11 @@
     <Lozinka>aca123</Lozinka>
     <TipKorisnika>Administrator</TipKorisnika>
   </Korisnik>
+  <Korisnik>
+    <Ime>dsad</Ime>
+    <Prezime>ddsds</Prezime>
+    <KorisnickoIme>aca1234</KorisnickoIme>
+    <Lozinka>aca1234</Lozinka>
+    <TipKorisnika>Administrator</TipKorisnika>
+  </Korisnik>
 </ArrayOfKorisnik>

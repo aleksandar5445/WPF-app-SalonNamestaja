@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:rs12_2011.UI.UIComponents"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         Title="GlavniMeni" Height="420" Width="960">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -22,7 +23,7 @@
         <Grid Grid.Row="1" Grid.ColumnSpan="3">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Width="auto" FontWeight="Bold" Name="LogovanKorisnik" Opacity="0.65"/>
-                <Button Content="Edit Korisnika" VerticalAlignment="Center" Width="110" HorizontalAlignment="Right" />
+                <Button Content="Edit Korisnika" VerticalAlignment="Center" Width="110" HorizontalAlignment="Right" Click="Button_Click" />
             </StackPanel>
         </Grid>
         <Grid Grid.Row="0" Grid.Column="0">

@@ -26,10 +26,10 @@ namespace rs12_2011.UI.UIComponents
             DataContext = viewModel;
         }
 
-        private void MagacinWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Util.GenericSerializer.Serialize("../../../rs12-2011.UI/bin/Debug/namestaj.xml", viewModel.Magacin.ToList());
-        }
+        //private void MagacinWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        //{
+        //    Util.GenericSerializer.Serialize("../../../rs12-2011.UI/bin/Debug/namestaj.xml", viewModel.Magacin.ToList());
+        //}
 
         private void NoviNamestaj_Click(object sender, RoutedEventArgs e)
         {
@@ -53,8 +53,12 @@ namespace rs12_2011.UI.UIComponents
                 window.ShowDialog();
             }
         }
+
+        private void TipNamestaja_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new TipNamestajaWindow();
+            window.ShowDialog();
+
+        }
     }
 }
-
-//yourComboBox.ItemSource=enum.GetValues(typeof(effectstyle)).cast<effectstyle>();
-//objectdataProvider

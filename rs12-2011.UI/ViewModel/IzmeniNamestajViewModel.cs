@@ -1,4 +1,5 @@
 ﻿using rs12_2011.model;
+using rs12_2011.UI.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,12 +12,14 @@ namespace rs12_2011.UI.ViewModel
     public class IzmeniNamestajViewModel : INotifyPropertyChanged
     {
         private AdministracijaNamestajaViewModel adminVM;
+        private DatabaseAccess dbaccess;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public IzmeniNamestajViewModel(AdministracijaNamestajaViewModel adm, Namestaj sel)
         {
             adminVM = adm;
+            dbaccess = new DatabaseAccess();
 
             TipoviNamestaja = new List<string> { "Kreveti", "Predsoblje", "Kuhinja" };
             TipNamestaja = TipoviNamestaja[0];
@@ -58,6 +61,8 @@ namespace rs12_2011.UI.ViewModel
 
                 adminVM.Magacin.Add(namestaj);
              }
+
+            dbaccess.UpdateNamestaj(namestaj);
         }
     }
 }
