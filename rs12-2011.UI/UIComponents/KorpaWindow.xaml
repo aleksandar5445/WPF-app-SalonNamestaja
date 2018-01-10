@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:rs12_2011.UI.ViewModel"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance vm:KorpaViewModel}"
-        Title="KorpaWindow" Height="300" Width="300">
+        Title="KorpaWindow" Height="400" Width="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -44,9 +44,10 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Button Name="btnIzbaciIzKorpe" Content="Izbaci iz korpe" Click="btnIzbaciIzKorpe_Click" />
-            <Button Name="btnKupi" Content="Kupi" Click="btnKupi_Click"/>
+        <StackPanel Height="37" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Margin="0,0,10,5" Name="btnKupi" Content="Kupi" Click="btnKupi_Click"/>
+            <Button Margin="0,0,35,5" Name="btnIzbaciIzKorpe" Content="Izbaci iz korpe" Click="btnIzbaciIzKorpe_Click" />
+            <Button Margin="0,0,10,5" Name="Izlaz" Content="Izlaz" Click="Izlaz_Click" />
         </StackPanel>
     </Grid>
 </Window>

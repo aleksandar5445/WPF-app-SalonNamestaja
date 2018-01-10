@@ -60,5 +60,10 @@ namespace rs12_2011.UI.UIComponents
                 viewModel.PostaviPopuste(selected);
             }
         }
+
+        private void Izlaz_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

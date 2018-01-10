@@ -60,6 +60,11 @@ namespace rs12_2011.UI.UIComponents
                 Close();
             }
         }
+
+        private void Izlaz_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 
 }

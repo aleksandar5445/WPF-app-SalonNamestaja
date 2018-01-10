@@ -74,5 +74,10 @@ namespace rs12_2011.UI.UIComponents
                 }
             }
         }
+
+        private void Izlaz_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
