@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:rs12_2011.UI.UIComponents"
          xmlns:vm="clr-namespace:rs12_2011.UI.ViewModel"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         FocusManager.FocusedElement="{Binding ElementName=Ime}"
          d:DataContext="{d:DesignInstance vm:NoviKorisnikViewModel}"
                 Title="Registracija" Height="500" Width="550">

@@ -65,8 +65,13 @@ namespace rs12_2011.UI.UIComponents
         {
             if (viewModel.Kolicina != 0)
             {
-                var selektovan = (Namestaj)MagacinGrid.SelectedItem;
-                viewModel.DodajUKorpu(selektovan);
+                var result = MessageBox.Show("Da li ste sigurni da zelite da dodate u korpu ?", "Korpa", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    var selektovan = (Namestaj)MagacinGrid.SelectedItem;
+                    viewModel.DodajUKorpu(selektovan);
+                    MessageBox.Show("Namestaj dodat u korpu", "Korpa", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
             }
         }
     }
