@@ -17,6 +17,7 @@ namespace rs12_2011.UI.Database
 
         public int Id { get; set; }
 
+        [Required]
         [StringLength(80)]
         public string Naziv { get; set; }
 

@@ -12,7 +12,7 @@ namespace rs12_2011.UI.ViewModel
         public AdministracijaAkcijeViewModel(Salon s)
         {
             salon = s;
-            akcije = new ObservableCollection<Akcija>(salon._Akcije);
+            akcije = new ObservableCollection<Akcija>(salon.Akcije);
             SelektovaniPopusti = new ObservableCollection<Tuple<string, int>>();
         }
         public AdministracijaAkcijeViewModel()

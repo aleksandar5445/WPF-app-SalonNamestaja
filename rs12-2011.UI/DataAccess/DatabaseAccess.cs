@@ -20,7 +20,7 @@ namespace rs12_2011.UI.DataAccess
             var namestaj = dbcontext.Namestaj;
             var result = new List<model.Namestaj>();
 
-            foreach(var n in namestaj)
+            foreach (var n in namestaj)
             {
                 result.Add(ToModelNamestaj(n));
             }
@@ -67,12 +67,38 @@ namespace rs12_2011.UI.DataAccess
             return result[0];
         }
 
+        public List<model.IstorijaKupovine> GetIstorijaKupovineZaKorisnika(string korisnickoIme)
+        {
+            var result = new List<model.IstorijaKupovine>();
+            foreach (var ik in dbcontext.IstorijaKupovine)
+            {
+                if (ik.Korisnik.KorisnickoIme == korisnickoIme)
+                {
+                    result.Add(ToModelIstorijaKupovine(ik));
+                }
+            }
+
+            return result;
+        }
+
+        public List<model.IstorijaKupovine> GetAllIstorijaKupovine()
+        {
+            var result = new List<model.IstorijaKupovine>();
+            foreach (var ik in dbcontext.IstorijaKupovine)
+            {
+                result.Add(ToModelIstorijaKupovine(ik));
+
+            }
+
+            return result;
+        }
+
         public List<model.IstorijaKupovine> GetIstorijaKupovineZaKorisnikaIDatum(string korisnickoIme, DateTime datumKupovine)
         {
             List<model.IstorijaKupovine> result = new List<model.IstorijaKupovine>();
-            foreach(var ik in dbcontext.IstorijaKupovine)
+            foreach (var ik in dbcontext.IstorijaKupovine)
             {
-                if(ik.Korisnik.KorisnickoIme == korisnickoIme && ik.DatumKupovine == datumKupovine)
+                if (ik.Korisnik.KorisnickoIme == korisnickoIme && ik.DatumKupovine == datumKupovine)
                 {
                     result.Add(ToModelIstorijaKupovine(ik));
                 }
@@ -100,12 +126,18 @@ namespace rs12_2011.UI.DataAccess
             dbcontext.SaveChanges();
         }
 
+        public void InsertIstorijaKupovine(model.IstorijaKupovine ik)
+        {
+            dbcontext.IstorijaKupovine.Add(ToDbIstorijaKupovine(ik));
+            dbcontext.SaveChanges();
+        }
+
         //UPDATE
         public void UpdateNamestaj(model.Namestaj namestaj)
         {
-            foreach(var n in dbcontext.Namestaj)
+            foreach (var n in dbcontext.Namestaj)
             {
-                if(n.Sifra == namestaj.Sifra)
+                if (n.Sifra == namestaj.Sifra)
                 {
                     n.Aktivan = namestaj.Aktivan == "Neaktivan" ? false : true;
                     n.JedinicnaCena = namestaj.JedinicnaCena;
@@ -116,6 +148,52 @@ namespace rs12_2011.UI.DataAccess
                 }
             }
 
+            dbcontext.SaveChanges();
+        }
+
+        public void UpdateKorisnik(model.Korisnik korisnik)
+        {
+            foreach (var n in dbcontext.Korisnik)
+            {
+                if (n.KorisnickoIme == korisnik.KorisnickoIme)
+                {
+                    n.Aktivan = korisnik.Aktivan == "Neaktivan" ? false : true;
+                    n.Ime = korisnik.Ime;
+                    n.Prezime = korisnik.Prezime;
+                    n.KorisnickoIme = korisnik.KorisnickoIme;
+                    n.Lozinka = korisnik.Lozinka;
+                    n.TipKorisnikaId = FindTipkorisnikId(korisnik.TipKorisnika.ToString());
+                }
+            }
+            dbcontext.SaveChanges();
+        }
+
+        public void UpdateAkcija(model.Akcija akcija)
+        {
+            foreach (var n in dbcontext.Akcija)
+            {
+                if (n.Naziv == akcija.Naziv)
+                {
+                    n.Aktivan = akcija.Aktivan == "Neaktivan" ? false : true;
+                    n.DatumPocetka = akcija.DatumPocetka;
+                    n.DatumKraja = akcija.DatumKraja;
+                    n.Naziv = akcija.Naziv;
+                }
+            }
+            dbcontext.SaveChanges();
+        }
+
+        public void UpdateSalon(model.Salon salon)
+        {
+            foreach (var s in dbcontext.Salon)
+            {
+                s.Adresa = salon.Adresa;
+                s.Mail = salon.Mail;
+                s.Naziv = salon.Naziv;
+                s.Sajt = salon.Sajt;
+                s.Telefon = salon.Telefon;
+                s.ZiroRacun = salon.ZiroRacun;
+            }
             dbcontext.SaveChanges();
         }
 
@@ -138,6 +216,7 @@ namespace rs12_2011.UI.DataAccess
         {
             return new model.Korisnik
             {
+                Aktivan = k.Aktivan == false ? "Neaktivan" : "Aktivan",
                 Ime = k.Ime,
                 KorisnickoIme = k.KorisnickoIme,
                 Lozinka = k.Lozinka,
@@ -157,7 +236,7 @@ namespace rs12_2011.UI.DataAccess
             };
 
             var popusti = new Dictionary<string, int>();
-            foreach(var p in a.Popusti)
+            foreach (var p in a.Popusti)
             {
                 popusti.Add(p.Namestaj.Sifra, p.Popust);
             }
@@ -191,7 +270,7 @@ namespace rs12_2011.UI.DataAccess
                 Sajt = s.Sajt,
                 Telefon = s.Telefon,
                 ZiroRacun = s.ZiroRacun,
-                _Akcije = GetAllAkcije(),
+                Akcije = GetAllAkcije(),
                 Korisnici = GetAllKorisnici()
             };
         }
@@ -206,7 +285,7 @@ namespace rs12_2011.UI.DataAccess
                 KolicinaUMagacinu = n.KolicinaUMagacinu,
                 Naziv = n.Naziv,
                 Sifra = n.Sifra,
-                TipNamestaja = new TipNamestaja { Id = FindTipNamestajaId(n.TipNamestaja.ToString()) }
+                TipNamestajaId = FindTipNamestajaId(n.TipNamestaja.ToString())
             };
         }
 
@@ -218,7 +297,8 @@ namespace rs12_2011.UI.DataAccess
                 KorisnickoIme = k.KorisnickoIme,
                 Lozinka = k.Lozinka,
                 Prezime = k.Prezime,
-                TipKorisnika = new TipKorisnika { Id = FindTipkorisnikId(k.TipKorisnika.ToString()) }
+                TipKorisnikaId = FindTipkorisnikId(k.TipKorisnika.ToString()),
+                Aktivan = k.Aktivan == "Neaktivan" ? false : true,
             };
         }
 
@@ -252,8 +332,8 @@ namespace rs12_2011.UI.DataAccess
             {
                 DatumKupovine = i.DatumKupovine,
                 Kolicina = i.Kolicina,
-                Korisnik = ToDbKorisnik(i.Korisnik),
-                Namestaj = ToDbNamestaj(i.Namestaj)
+                KorisnikId = FindKorisnikId(i.Korisnik.KorisnickoIme),
+                NamestajId = FindNamestajId(i.Namestaj.Sifra)
             };
         }
 
@@ -272,15 +352,14 @@ namespace rs12_2011.UI.DataAccess
             };
         }
 
-
         //Pomocne metode za pronalazenje IDeva
         private int FindNamestajId(string sifra)
         {
             var namestaji = dbcontext.Namestaj;
 
-            foreach(var n in namestaji)
+            foreach (var n in namestaji)
             {
-                if(n.Sifra == sifra)
+                if (n.Sifra == sifra)
                 {
                     return n.Id;
                 }
@@ -291,9 +370,9 @@ namespace rs12_2011.UI.DataAccess
 
         private int FindTipNamestajaId(string naziv)
         {
-            foreach(var tn in dbcontext.TipNamestaja)
+            foreach (var tn in dbcontext.TipNamestaja)
             {
-                if(tn.Naziv == naziv)
+                if (tn.Naziv == naziv)
                 {
                     return tn.Id;
                 }
@@ -309,6 +388,19 @@ namespace rs12_2011.UI.DataAccess
                 if (tk.Naziv == naziv)
                 {
                     return tk.Id;
+                }
+            }
+
+            return -1;
+        }
+
+        private int FindKorisnikId(string korisnickoIme)
+        {
+            foreach (var k in dbcontext.Korisnik)
+            {
+                if (k.KorisnickoIme == korisnickoIme)
+                {
+                    return k.Id;
                 }
             }
 

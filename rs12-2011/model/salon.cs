@@ -10,7 +10,7 @@ namespace rs12_2011.model
             Magacin = new List<Namestaj>();
             Korpa = new List<Tuple<Namestaj, int>>();
             Korisnici = new List<Korisnik>();
-            _Akcije = new List<Akcija>();
+            Akcije = new List<Akcija>();
 
             Aktivan = true;
         }
@@ -30,6 +30,6 @@ namespace rs12_2011.model
         public List<Namestaj> Magacin { get; set; }
         public List<Korisnik> Korisnici { get; set; }
         public List<Tuple<Namestaj, int>> Korpa { get; set; }
-        public List<Akcija> _Akcije { get; set; }
+        public List<Akcija> Akcije { get; set; }
     }
 }

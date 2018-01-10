@@ -60,5 +60,14 @@ namespace rs12_2011.UI.UIComponents
             window.ShowDialog();
 
         }
+
+        private void DodajUKorpu_Click(object sender, RoutedEventArgs e)
+        {
+            if (viewModel.Kolicina != 0)
+            {
+                var selektovan = (Namestaj)MagacinGrid.SelectedItem;
+                viewModel.DodajUKorpu(selektovan);
+            }
+        }
     }
 }

@@ -18,16 +18,21 @@
             <Grid Width="525">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal">
+                    <TextBox Margin="10" Width="100" Name="Kolicina" Text="{Binding Kolicina}"/>
+                    <Button Margin="10" Name="DodajUKorpu" Content="Dodaj u korpu" Click="DodajUKorpu_Click"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
                     <Button Margin="10" Name="NoviNamestaj" Content="Novi Namestaj" Click="NoviNamestaj_Click"/>
                     <Button Margin="10" Name="ObrisiNamestaj" Content="Obrisi Namestaj" Click="ObrisiNamestaj_Click" />
                     <Button Margin="10" Name="IzmeniNamestaj" Content="Izmeni Namestaj" Click="IzmeniNamestaj_Click" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Margin="10" Name="TipNamestaja" Content="Tipovi Namestaja" Click="TipNamestaja_Click"/>
-                <Button Margin="10" Width="45" Name="Izlaz" Content="Izlaz" HorizontalAlignment="Right"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Margin="10" Name="TipNamestaja" Content="Tipovi Namestaja" Click="TipNamestaja_Click"/>
+                    <Button Margin="10" Width="45" Name="Izlaz" Content="Izlaz" HorizontalAlignment="Right"/>
                 </StackPanel>
             </Grid>
         </StackPanel>

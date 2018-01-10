@@ -37,7 +37,7 @@
                 <PasswordBox HorizontalAlignment="Left" Margin="183,136,0,0" x:Name="passwordBoxPonovo" VerticalAlignment="Top" Width="222" />
                 <TextBlock Name="tbPoruka" TextWrapping="Wrap" Text="" Foreground="Red" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="222" Margin="112,0,71,70"/>
                 <Button Content="Izlaz" HorizontalAlignment="Right" VerticalAlignment="Bottom" x:Name="IzlazButton" Click="IzlazButton_Click" Width="104"/>
-                <Button Content="Novi Korisnik" x:Name="Novi_korisnik" VerticalAlignment="Bottom" Width="104" Click="Novi_korisnik_Click"/>
+                <Button Content="Novi Korisnik" x:Name="btnKorisnik" VerticalAlignment="Bottom" Width="104" Click="Korisnik_Click"/>
             </Grid>
         </Grid>
     </Grid>

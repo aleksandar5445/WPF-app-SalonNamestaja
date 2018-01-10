@@ -30,14 +30,15 @@
             <StackPanel>
                 <Button x:Name="Magacin" Content="Magacin" Margin="15" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Magacin_Click"/>
                 <Button Name="Akcija" Content="Akcija" Margin="15,2,15,15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Click="Akcija_Click"/>
-                <Button Name="Prodaja" Content="Prodaja" Margin="15,2,15,15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
+                <Button Name="IstorijaKupovine" Content="Istorija Kupovine" Margin="15,2,15,15" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Click="IstorijaKupovine_Click"/>
             </StackPanel>
         </Grid>
         <Grid Grid.RowSpan="2" Grid.Column="2">
             <Grid.Background>
                 <ImageBrush/>
             </Grid.Background>
-            <Button Name="Korpa" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button x:Name="SalonEdit" Content="Salon Opsti Podaci" VerticalAlignment="Top" HorizontalAlignment="Center" Padding="4" Margin="10,10,8,0" Click="SalonEdit_Click"/>
+            <Button Name="Korpa" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Korpa_Click">
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>

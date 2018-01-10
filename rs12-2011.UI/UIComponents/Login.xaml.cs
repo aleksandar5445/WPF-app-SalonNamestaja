@@ -37,7 +37,7 @@ namespace rs12_2011.UI.UIComponents
         private void Novi_korisnik_Click(object sender, RoutedEventArgs e)
         {
             var window = new NoviKorisnik();
-            window.Init(this, salon);
+            window.Init(this, salon, 0);
             this.Hide();
             window.Show();
         }

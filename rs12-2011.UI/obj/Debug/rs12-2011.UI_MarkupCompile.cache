@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\App.xaml
-8-500458760
+111309591734
 2-330696657
-32-65399035
+38120390687
 21631214509
-MainWindow.xaml;UIComponents\AkcijeWindow.xaml;UIComponents\Login.xaml;UIComponents\MagacinWindow.xaml;UIComponents\NamestajWindow.xaml;UIComponents\NovaAkcijaWindow.xaml;UIComponents\NoviKorisnik.xaml;UIComponents\TipNamestajaWindow.xaml;
+MainWindow.xaml;UIComponents\AkcijeWindow.xaml;UIComponents\IstorijaKupovineWindow.xaml;UIComponents\KorpaWindow.xaml;UIComponents\Login.xaml;UIComponents\MagacinWindow.xaml;UIComponents\NamestajWindow.xaml;UIComponents\NovaAkcijaWindow.xaml;UIComponents\NoviKorisnik.xaml;UIComponents\SalonEdit.xaml;UIComponents\TipNamestajaWindow.xaml;
 
 False
 

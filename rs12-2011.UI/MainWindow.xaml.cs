@@ -34,8 +34,12 @@ namespace rs12_2011.UI
         public void Init(Salon s)
         {
             salon = s;
+            InitKorisnik();
+        }
 
-            LogovanKorisnik.Text = "  "+ salon.UlogovaniKorisnik.Ime +"  " + salon.UlogovaniKorisnik.Prezime +" Korisnicko Ime: "+ salon.UlogovaniKorisnik.KorisnickoIme+"  ";
+        public void InitKorisnik()
+        {
+            LogovanKorisnik.Text = "  " + salon.UlogovaniKorisnik.Ime + "  " + salon.UlogovaniKorisnik.Prezime + " Korisnicko Ime: " + salon.UlogovaniKorisnik.KorisnickoIme + "  ";
         }
 
         private void Magacin_Click(object sender, RoutedEventArgs e)
@@ -56,6 +60,27 @@ namespace rs12_2011.UI
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             var window = new NoviKorisnik();
+            window.Init(this, salon, 1);
+            window.ShowDialog();
+        }
+
+        private void Korpa_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new KorpaWindow();
+            window.Init(salon, this);
+            window.ShowDialog();
+        }
+
+        private void IstorijaKupovine_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new IstorijaKupovineWindow();
+            window.Init(salon);
+            window.ShowDialog();
+        }
+
+        private void SalonEdit_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new SalonEdit();
             window.Init(this, salon);
             window.ShowDialog();
         }

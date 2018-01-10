@@ -19,11 +19,11 @@ namespace rs12_2011.UI.Database
         public int Id { get; set; }
 
         [Required]
-        [StringLength(255)]
+        [StringLength(50)]
         public string Naziv { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [StringLength(50)]
         public string Sifra { get; set; }
 
         public decimal JedinicnaCena { get; set; }

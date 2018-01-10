@@ -50,6 +50,8 @@ namespace rs12_2011.UI.ViewModel
             }
         }
 
+        public int Kolicina { get; set; }
+
         public void ObrisiNamestaj(Namestaj namestaj)
         {
             if (namestaj != null)
@@ -62,6 +64,30 @@ namespace rs12_2011.UI.ViewModel
             }
 
             database.UpdateNamestaj(namestaj);
+        }
+
+        public void DodajUKorpu(Namestaj namestaj)
+        {
+            salon.Korpa.Add(new Tuple<Namestaj, int>(namestaj, Kolicina));
+            SmanjiKolicinu(namestaj.Sifra);
+        }
+
+        private void SmanjiKolicinu(string sifra)
+        {
+            Namestaj n = null;
+            foreach(var namestaj in Magacin)
+            {
+                if(namestaj.Sifra == sifra)
+                {
+                    namestaj.KolicinaUMagacinu -= Kolicina;
+                    n = namestaj;
+                }
+            }
+            if(n != null)
+            {
+                Magacin.Remove(n);
+                Magacin.Add(n);
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

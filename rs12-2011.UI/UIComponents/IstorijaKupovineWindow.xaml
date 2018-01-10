@@ -1,0 +1,22 @@
+﻿<Window x:Class="rs12_2011.UI.UIComponents.IstorijaKupovineWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:rs12_2011.UI.UIComponents"
+        xmlns:vm="clr-namespace:rs12_2011.UI.ViewModel"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance vm:IstorijaKupovineViewModel}"
+        Title="KorpaWindow" Height="300" Width="600">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserReorderColumns="False" IsReadOnly="True" Name="KorpaGrid" ItemsSource="{Binding IstorijaKupovine}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Korisnik" Width="*" Binding="{Binding Korisnik.KorisnickoIme}" CanUserResize="False" CanUserReorder="False" />
+                <DataGridTextColumn Header="Sifra namestaja" Width="*" Binding="{Binding Namestaj.Sifra}" CanUserResize="False" CanUserReorder="False" />
+                <DataGridTextColumn Header="Naziv namestaja" Width="*" Binding="{Binding Namestaj.Naziv}" CanUserResize="False" CanUserReorder="False" />
+                <DataGridTextColumn Header="Kolicina" Width="*" Binding="{Binding Kolicina}" CanUserResize="False" CanUserReorder="False"/>
+                <DataGridTextColumn Header="Datum kupovine" Width="*" Binding="{Binding DatumKupovine}" CanUserResize="False" CanUserReorder="False"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

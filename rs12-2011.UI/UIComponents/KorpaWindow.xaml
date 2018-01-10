@@ -1,0 +1,52 @@
+﻿<Window x:Class="rs12_2011.UI.UIComponents.KorpaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:rs12_2011.UI.UIComponents"
+        xmlns:vm="clr-namespace:rs12_2011.UI.ViewModel"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance vm:KorpaViewModel}"
+        Title="KorpaWindow" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" CanUserReorderColumns="False" IsReadOnly="True" Name="KorpaGrid" ItemsSource="{Binding Stavke}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Sifra" Width="*" Binding="{Binding Item1.Sifra}" CanUserResize="False" CanUserReorder="False" />
+                <DataGridTextColumn Header="Naziv" Width="*" Binding="{Binding Item1.Naziv}" CanUserResize="False" CanUserReorder="False" />
+                <DataGridTextColumn Header="Jedinicna cena" Width="*" Binding="{Binding Item1.JedinicnaCena}" CanUserResize="False" CanUserReorder="False" />
+                <DataGridTextColumn Header="Kolicina" Width="*" Binding="{Binding Item2}" CanUserResize="False" CanUserReorder="False"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Grid Width="525">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Name="tblTotal" Text="Total: " />
+                    <TextBlock Name="tblTotalVrednost" Text="{Binding Total}" />
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock Name="tblTotalPopust" Text="Total sa popustom: " />
+                    <TextBlock Name="tblTotalPopustVrednost" Text="{Binding TotalSaPopustom}" />
+                </StackPanel>
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <TextBlock Name="tblGrandTotal" Text="Total sa popustom i porezom: " />
+                    <TextBlock Name="tblGrandTotalVrednost" Text="{Binding GrandTotal}" />
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Name="btnIzbaciIzKorpe" Content="Izbaci iz korpe" Click="btnIzbaciIzKorpe_Click" />
+            <Button Name="btnKupi" Content="Kupi" Click="btnKupi_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

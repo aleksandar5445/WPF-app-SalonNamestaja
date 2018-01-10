@@ -12,7 +12,6 @@ namespace rs12_2011.UI.UIComponents
         public int Mode = 0; // 0-create Korisnik 1-EDIT
         Window parent;
         Salon salon;
-        NoviKorisnikViewModel viewModel;
 
         public NoviKorisnik()
         {
@@ -20,28 +19,30 @@ namespace rs12_2011.UI.UIComponents
             Closing += NoviKorisnik_Closing;
         }
 
-        public void Inicijalizacija()
-        {
-            if (Mode == 1)
-            {
-                Korisnicko_ime.IsEnabled = false;
-                this.Title = "Izmeni Korisnika";
-                return;
-            }
-        }
-
         private void NoviKorisnik_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             parent.Show();
         }
 
-        public void Init(Window p, Salon s)
+        public void Init(Window p, Salon s, int mode)
         {
             parent = p;
             salon = s;
+            Mode = mode;
 
-            viewModel = new NoviKorisnikViewModel(salon);
-            DataContext = viewModel;
+            if (Mode == 1)
+            {
+                Korisnicko_ime.IsEnabled = false;
+                this.Title = "Izmeni Korisnika";
+                btnKorisnik.Content = "Izmeni korisnika";
+                DataContext = new IzmeniKorisnikaViewModel(salon, salon.UlogovaniKorisnik);
+            }
+            else
+            {
+                this.Title = "Novi Korisnik";
+                btnKorisnik.Content = "Novi korisnik";
+                DataContext = new NoviKorisnikViewModel(salon);
+            }
         }
 
         private void IzlazButton_Click(object sender, RoutedEventArgs e)
@@ -50,16 +51,29 @@ namespace rs12_2011.UI.UIComponents
             Close();
         }
 
-        private void Novi_korisnik_Click(object sender, RoutedEventArgs e)
+        private void Korisnik_Click(object sender, RoutedEventArgs e)
         {
-            var valid = viewModel.Validacija(passwordBox1.Password, passwordBoxPonovo.Password);
-
-            tbPoruka.Text = valid;
-
-            if (string.IsNullOrEmpty(valid))
+            if (Mode == 0)
             {
-                viewModel.KreirajKorisnika(passwordBox1.Password);
+                var viewModel = (NoviKorisnikViewModel)DataContext;
+                var valid = viewModel.Validacija(passwordBox1.Password, passwordBoxPonovo.Password);
 
+                tbPoruka.Text = valid;
+
+                if (string.IsNullOrEmpty(valid))
+                {
+                    viewModel.KreirajKorisnika(passwordBox1.Password);
+
+                    parent.Show();
+                    Close();
+                }
+            }
+            else
+            {
+                var viewModel = (IzmeniKorisnikaViewModel)DataContext;
+                viewModel.Lozinka = passwordBox1.Password;
+                viewModel.IzmeniKorisnika();
+                ((MainWindow)parent).InitKorisnik();
                 parent.Show();
                 Close();
             }

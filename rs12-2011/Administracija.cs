@@ -31,16 +31,16 @@ namespace rs12_2011
             prodaje = new AdministracijaProdaje(salon);
             salon.Magacin = Util.GenericSerializer.Deserialize<List<Namestaj>>("namestaj.xml");
             salon.Korisnici = Util.GenericSerializer.Deserialize<List<Korisnik>>("korisnici.xml");
-            salon._Akcije = Util.GenericSerializer.Deserialize < List<Akcija>>("akcije.xml");
+            salon.Akcije = Util.GenericSerializer.Deserialize < List<Akcija>>("akcije.xml");
 
             if (salon.Magacin == null)
             {
                 salon.Magacin = new List<Namestaj>();
             }
 
-            if (salon._Akcije == null)
+            if (salon.Akcije == null)
             {
-                salon._Akcije = new List<Akcija>();
+                salon.Akcije = new List<Akcija>();
             }
 
             if (salon.Korisnici == null || salon.Korisnici.Count == 0)
@@ -100,7 +100,7 @@ namespace rs12_2011
         {
             Util.GenericSerializer.Serialize("namestaj.xml", salon.Magacin);
             Util.GenericSerializer.Serialize("korisnici.xml", salon.Korisnici);
-            Util.GenericSerializer.Serialize("akcije.xml",salon._Akcije);
+            Util.GenericSerializer.Serialize("akcije.xml",salon.Akcije);
         }
     }
 

@@ -1,4 +1,5 @@
 ﻿using rs12_2011.model;
+using rs12_2011.UI.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,7 @@ namespace rs12_2011.UI.ViewModel
     class NoviKorisnikViewModel : INotifyPropertyChanged
     {
         private Salon salon;
+        private DatabaseAccess databaseAccess;
 
         public NoviKorisnikViewModel()
         {
@@ -19,6 +21,7 @@ namespace rs12_2011.UI.ViewModel
         public NoviKorisnikViewModel(Salon s)
         {
             salon = s;
+            databaseAccess = new DatabaseAccess();
 
             TipoviKorisnika = new List<string> { "Administrator", "Prodavac" };
             TipKorisnika = TipoviKorisnika[0];
@@ -32,14 +35,17 @@ namespace rs12_2011.UI.ViewModel
 
         public void KreirajKorisnika(string lozinka)
         {
-            salon.Korisnici.Add(new Korisnik
+            var korisnik = new Korisnik
             {
                 Ime = Ime,
                 KorisnickoIme = KorisnickoIme,
                 Lozinka = lozinka,
                 Prezime = Prezime,
                 TipKorisnika = (TipKorisnika)Enum.Parse(typeof(TipKorisnika), TipKorisnika)
-            });
+            };
+            salon.Korisnici.Add(korisnik);
+
+            databaseAccess.InsertKorisnik(korisnik);
         }
 
         public string Validacija(string password1, string password2)

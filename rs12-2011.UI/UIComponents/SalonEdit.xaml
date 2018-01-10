@@ -1,0 +1,63 @@
+﻿<Window x:Class="rs12_2011.UI.UIComponents.SalonEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:rs12_2011.UI.UIComponents"
+         xmlns:vm="clr-namespace:rs12_2011.UI.ViewModel"
+        mc:Ignorable="d"
+         d:DataContext="{d:DesignInstance vm:SalonEditViewModel}"
+                Title="Edit Podataka Salona" Height="500" Width="550">
+    <Grid Width="550" Height="500">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="475*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="440*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <TextBlock HorizontalAlignment="Left" Name="textBlockHeading" Text="Edit Podataka :" VerticalAlignment="Bottom" FontSize="20"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1" Margin="0,0,10,50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock FontSize="16" HorizontalAlignment="Left" Name="textBlockNaziv" Text="Naziv" VerticalAlignment="Top" />
+            <TextBlock Grid.Row="1" FontSize="16" HorizontalAlignment="Left" Name="textBlockAdresa" Text="Adresa" VerticalAlignment="Top"/>
+            <TextBlock Grid.Row="2" FontSize="16" HorizontalAlignment="Left" Name="TextBlockTelefon" Text="Telefon" VerticalAlignment="Top"/>
+            <TextBlock Grid.Row="3" FontSize="16" HorizontalAlignment="Left"  Name="TextBlockMail" Text="Mail" VerticalAlignment="Top"/>
+            <TextBlock Grid.Row="4" FontSize="16" HorizontalAlignment="Left"  Name="TextBlockSajt" Text="Sajt" VerticalAlignment="Top"/>
+            <TextBlock Grid.Row="5" FontSize="16" HorizontalAlignment="Left"  Name="TextBlockPIB" Text="PIB" VerticalAlignment="Top"/>
+            <TextBlock Grid.Row="6" FontSize="16" HorizontalAlignment="Left"  Name="TextBlockMaticniBr" Text="Maticni Br" VerticalAlignment="Top"/>
+            <TextBlock Grid.Row="7" FontSize="16" HorizontalAlignment="Left"  Name="TextBlockBrZiroRacuna" Text="Br Ziro Racuna" VerticalAlignment="Top"/>
+            <TextBox Grid.Column="1" HorizontalAlignment="Left" Name="Naziv" Text="{Binding Naziv}" VerticalAlignment="Top" Width="222" />
+            <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Name="Adresa" Text="{Binding Adresa}" VerticalAlignment="Top" Width="222" />
+            <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Name="Telefon" Text="{Binding Telefon}" VerticalAlignment="Top" Width="222" />
+            <TextBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Name="Mail" Text="{Binding Mail}" VerticalAlignment="Top" Width="222" />
+            <TextBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Name="Sajt" Text="{Binding Sajt}" VerticalAlignment="Top" Width="222" />
+            <TextBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Name="PIB" IsReadOnly="True" Text="{Binding PIB}" VerticalAlignment="Top" Width="222" />
+            <TextBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" Name="MaticniBr" IsReadOnly="True" Text="{Binding MaticniBr}" VerticalAlignment="Top" Width="222" />
+            <TextBox Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" Name="ZiroRacun" Text="{Binding ZiroRacun}" VerticalAlignment="Top" Width="222" />
+            <TextBlock Name="tbPoruka" TextWrapping="Wrap" Text="" Foreground="Red" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="222" Margin="112,0,71,70"/>
+            <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Izmeni salon" x:Name="btnIzmeni" Click="btnIzmeni_Click" Width="104" Margin="0,0,10,0"/>
+                <Button Content="Izadji" x:Name="btnIzadji" Width="104" Click="btnIzadji_Click" Margin="0,0,20,0"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

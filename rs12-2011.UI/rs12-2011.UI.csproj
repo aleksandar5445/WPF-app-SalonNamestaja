@@ -78,6 +78,12 @@
     <Compile Include="UIComponents\AkcijeWindow.xaml.cs">
       <DependentUpon>AkcijeWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UIComponents\IstorijaKupovineWindow.xaml.cs">
+      <DependentUpon>IstorijaKupovineWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIComponents\KorpaWindow.xaml.cs">
+      <DependentUpon>KorpaWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UIComponents\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -93,19 +99,25 @@
     <Compile Include="UIComponents\NoviKorisnik.xaml.cs">
       <DependentUpon>NoviKorisnik.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UIComponents\SalonEdit.xaml.cs">
+      <DependentUpon>SalonEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UIComponents\TipNamestajaWindow.xaml.cs">
       <DependentUpon>TipNamestajaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AdministracijaAkcijeViewModel.cs" />
     <Compile Include="ViewModel\AdministracijaKorisnikaViewModel.cs" />
     <Compile Include="ViewModel\AdministracijaNamestajaViewModel.cs" />
+    <Compile Include="ViewModel\IstorijaKupovineViewModel.cs" />
     <Compile Include="ViewModel\IzmeniAkcijeViewModel.cs" />
     <Compile Include="ViewModel\IzmeniKorisnikaViewModel.cs" />
     <Compile Include="ViewModel\IzmeniNamestajViewModel.cs" />
+    <Compile Include="ViewModel\KorpaViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\NovaAkcijaViewModel.cs" />
     <Compile Include="ViewModel\NoviKorisnikViewModel.cs" />
     <Compile Include="ViewModel\NoviNamestajViewModel.cs" />
+    <Compile Include="ViewModel\SalonEditViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -119,6 +131,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UIComponents\AkcijeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIComponents\IstorijaKupovineWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIComponents\KorpaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,6 +159,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UIComponents\NoviKorisnik.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIComponents\SalonEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,4 +1,5 @@
 ﻿using rs12_2011.model;
+using rs12_2011.UI.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,19 +11,22 @@ namespace rs12_2011.UI.ViewModel
 {
     class IzmeniKorisnikaViewModel : INotifyPropertyChanged
     {
-        private AdministracijaKorisnikaViewModel adminKM;
+        private Salon salon;
+        private DatabaseAccess databaseAccess;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public IzmeniKorisnikaViewModel(AdministracijaKorisnikaViewModel adk,Korisnik korisnik)
+        public IzmeniKorisnikaViewModel(Salon s,Korisnik korisnik)
         {
-            adminKM = adk;
+            databaseAccess = new DatabaseAccess();
 
+            salon = s;
             Ime = korisnik.Ime;
             Lozinka = korisnik.Lozinka;
             KorisnickoIme = korisnik.KorisnickoIme;
             Prezime = korisnik.Prezime;
-            TipKorisnika = korisnik.TipKorisnika;
+            TipoviKorisnika = new List<string> { "Administrator", "Prodavac" };
+            TipKorisnika = korisnik.TipKorisnika.ToString();
         }
 
         public IzmeniKorisnikaViewModel() { }
@@ -31,12 +35,32 @@ namespace rs12_2011.UI.ViewModel
         public string Lozinka { get; set; }
         public string KorisnickoIme { get; set; }
         public string Prezime { get; set; }
-        public TipKorisnika TipKorisnika { get; set; }
+        public string TipKorisnika { get; set; }
+        public List<string> TipoviKorisnika { get; }
 
         public void IzmeniKorisnika()
         {
             Korisnik korisnik = null;
-            //foreach (var n in adminKM.)
+            foreach(var n in salon.Korisnici)
+            {
+                if (n.KorisnickoIme == KorisnickoIme)
+                {
+                    korisnik = n;
+                }
+            }
+            if(korisnik != null)
+            {
+                salon.Korisnici.Remove(korisnik);
+                korisnik.Ime = Ime;
+                korisnik.KorisnickoIme = KorisnickoIme;
+                korisnik.Lozinka = !string.IsNullOrEmpty(Lozinka) ? Lozinka : korisnik.Lozinka;
+                korisnik.Prezime = Prezime;
+                korisnik.TipKorisnika=(TipKorisnika)Enum.Parse(typeof(TipKorisnika), TipKorisnika);
+
+                salon.Korisnici.Add(korisnik);
+            }
+            salon.UlogovaniKorisnik = korisnik;
+            databaseAccess.UpdateKorisnik(korisnik);
         }
 
 

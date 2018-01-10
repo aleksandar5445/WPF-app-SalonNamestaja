@@ -18,22 +18,24 @@ namespace rs12_2011.UI.Database
         public int Id { get; set; }
 
         [Required]
-        [StringLength(25)]
+        [StringLength(50)]
         public string Ime { get; set; }
 
         [Required]
-        [StringLength(25)]
+        [StringLength(50)]
         public string Prezime { get; set; }
 
         [Required]
-        [StringLength(25)]
+        [StringLength(50)]
         public string KorisnickoIme { get; set; }
 
         [Required]
-        [StringLength(25)]
+        [StringLength(50)]
         public string Lozinka { get; set; }
 
         public int TipKorisnikaId { get; set; }
+
+        public bool? Aktivan { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<IstorijaKupovine> IstorijaKupovine { get; set; }

@@ -19,7 +19,7 @@ namespace rs12_2011.UI.Database
         [StringLength(255)]
         public string Adresa { get; set; }
 
-        [StringLength(50)]
+        [StringLength(255)]
         public string Telefon { get; set; }
 
         [StringLength(255)]
@@ -29,15 +29,15 @@ namespace rs12_2011.UI.Database
         public string Sajt { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(255)]
         public string PIB { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(255)]
         public string MaticniBr { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(255)]
         public string ZiroRacun { get; set; }
     }
 }

@@ -35,3 +35,9 @@ C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\bin\Debug\EntityFramew
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\bin\Debug\EntityFramework.xml
 C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\SalonEdit.g.cs
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\SalonEdit.baml
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\KorpaWindow.g.cs
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\KorpaWindow.baml
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\IstorijaKupovineWindow.g.cs
+C:\Users\Dell\Desktop\workspace-C#\rs12-2011\rs12-2011.UI\obj\Debug\UIComponents\IstorijaKupovineWindow.baml
