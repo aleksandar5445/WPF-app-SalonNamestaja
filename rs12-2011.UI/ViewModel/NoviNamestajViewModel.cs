@@ -1,4 +1,5 @@
 ﻿using rs12_2011.model;
+using rs12_2011.UI.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,7 @@ namespace rs12_2011.UI.ViewModel
     public class NoviNamestajViewModel : INotifyPropertyChanged
     {
         private AdministracijaNamestajaViewModel adminVM;
+        private DatabaseAccess dbaccess;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -19,6 +21,7 @@ namespace rs12_2011.UI.ViewModel
             adminVM = adm;
             TipoviNamestaja = new List<string> { "Kreveti", "Predsoblje", "Kuhinja" };
             TipNamestaja = TipoviNamestaja[0];
+            dbaccess = new DatabaseAccess();
         }
 
         public NoviNamestajViewModel() { }
@@ -32,14 +35,17 @@ namespace rs12_2011.UI.ViewModel
 
         public void KreirajNoviNamestaj()
         {
-            adminVM.Magacin.Add(new Namestaj
+            var novi = new Namestaj
             {
                 Naziv = Naziv,
                 JedinicnaCena = JedinicnaCena,
                 Sifra = Sifra,
                 KolicinaUMagacinu = KolicinaUMagacinu,
                 TipNamestaja = (TipNamestaja)Enum.Parse(typeof(TipNamestaja), TipNamestaja)
-            });
+            };
+            adminVM.Magacin.Add(novi);
+
+            dbaccess.InsertNamestaj(novi);
         }
     }
 }

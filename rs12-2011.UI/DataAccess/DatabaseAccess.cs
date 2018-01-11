@@ -132,6 +132,12 @@ namespace rs12_2011.UI.DataAccess
             dbcontext.SaveChanges();
         }
 
+        public void InsertAkcijaIPopusti(model.Akcija ak)
+        {
+            dbcontext.Akcija.Add(ToDbAkcija(ak));
+            dbcontext.SaveChanges();
+        }
+
         //UPDATE
         public void UpdateNamestaj(model.Namestaj namestaj)
         {
@@ -178,6 +184,15 @@ namespace rs12_2011.UI.DataAccess
                     n.DatumPocetka = akcija.DatumPocetka;
                     n.DatumKraja = akcija.DatumKraja;
                     n.Naziv = akcija.Naziv;
+                    foreach (var p in akcija.Popusti)
+                    {
+                        n.Popusti.Add(new Popusti
+                        {
+                            AkcijaId = FindAkcijaId(akcija.Naziv),
+                            NamestajId = FindNamestajId(p.Key),
+                            Popust = p.Value
+                        });
+                    }
                 }
             }
             dbcontext.SaveChanges();
@@ -352,6 +367,16 @@ namespace rs12_2011.UI.DataAccess
             };
         }
 
+        private Popusti ToDbPopust(string sifra, int kolicina, int akcijaId)
+        {
+            return new Popusti
+            {
+                AkcijaId = akcijaId,
+                NamestajId = FindNamestajId(sifra),
+                Popust = kolicina
+            };
+        }
+
         //Pomocne metode za pronalazenje IDeva
         private int FindNamestajId(string sifra)
         {
@@ -399,6 +424,19 @@ namespace rs12_2011.UI.DataAccess
             foreach (var k in dbcontext.Korisnik)
             {
                 if (k.KorisnickoIme == korisnickoIme)
+                {
+                    return k.Id;
+                }
+            }
+
+            return -1;
+        }
+
+        private int FindAkcijaId(string ime)
+        {
+            foreach (var k in dbcontext.Akcija)
+            {
+                if (k.Naziv == ime)
                 {
                     return k.Id;
                 }

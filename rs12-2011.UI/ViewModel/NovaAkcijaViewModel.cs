@@ -1,4 +1,5 @@
 ﻿using rs12_2011.model;
+using rs12_2011.UI.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,13 +12,18 @@ namespace rs12_2011.UI.ViewModel
 {
     class NovaAkcijaViewModel : INotifyPropertyChanged
     {
+        private Salon salon = null;
+        private DatabaseAccess database = null;
         AdministracijaAkcijeViewModel viewModel;
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        public NovaAkcijaViewModel(AdministracijaAkcijeViewModel adm)
+
+        public NovaAkcijaViewModel(AdministracijaAkcijeViewModel adm,Salon s)
         {
+            salon = s;
+            database = new DatabaseAccess();
             viewModel = adm;
             Popusti = new ObservableCollection<Tuple<string, int>>();
+            Magacin = new ObservableCollection<Namestaj>(salon.Magacin);
         }
         public NovaAkcijaViewModel() { }
 
@@ -28,17 +34,21 @@ namespace rs12_2011.UI.ViewModel
         public string Aktivan { get; set; }
         public string SifraPopusta { get; set; }
         public int PopustKolicina { get; set; }
+        public ObservableCollection<Namestaj> Magacin { get; set;}
 
         public void KreirajAkciju()
         {
-            viewModel.Akcije.Add(new Akcija
+            var nova = new Akcija
             {
                 Naziv = Naziv,
                 DatumPocetka = DatumPocetka,
                 DatumKraja = DatumKraja,
-                Popusti=ParsirajPopuste(),
-                Aktivan=Aktivan
-            });
+                Popusti = ParsirajPopuste(),
+                Aktivan = Aktivan
+            };
+            viewModel.Akcije.Add(nova);
+
+            database.InsertAkcija(nova);
         }
 
         public void KreirajPopust()
@@ -56,6 +66,7 @@ namespace rs12_2011.UI.ViewModel
 
             return temp;
         }
+        public event PropertyChangedEventHandler PropertyChanged;
 
     }
 }

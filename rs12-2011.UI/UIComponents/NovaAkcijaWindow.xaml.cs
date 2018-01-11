@@ -1,4 +1,5 @@
-﻿using rs12_2011.UI.ViewModel;
+﻿using rs12_2011.model;
+using rs12_2011.UI.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,8 @@ namespace rs12_2011.UI.UIComponents
     /// </summary>
     public partial class NovaAkcijaWindow : Window
     {
+        private AdministracijaNamestajaViewModel viewModel;
+
         public NovaAkcijaWindow()
         {
             InitializeComponent();
@@ -27,8 +30,11 @@ namespace rs12_2011.UI.UIComponents
 
         public int Mode { get; set; }
 
-        public void Init()
+        public void Init(Salon s)
         {
+            viewModel = new AdministracijaNamestajaViewModel(s);
+            DataContext = viewModel;
+
             if(Mode == 1)
             {
                 tbNaziv.IsReadOnly = true;

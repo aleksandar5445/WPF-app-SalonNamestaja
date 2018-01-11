@@ -10,6 +10,7 @@ namespace rs12_2011.UI.UIComponents
     public partial class AkcijeWindow : Window
     {
         private AdministracijaAkcijeViewModel viewModel;
+        private Salon salon;
 
         public AkcijeWindow()
         {
@@ -20,11 +21,12 @@ namespace rs12_2011.UI.UIComponents
         {
             viewModel = new AdministracijaAkcijeViewModel(s);
             DataContext = viewModel;
+            salon = s;
         }
 
         private void NovaAkcija_Click(object sender, RoutedEventArgs e)
         {
-            var window = new NovaAkcijaWindow() { DataContext = new NovaAkcijaViewModel(viewModel), Mode = 0 };
+            var window = new NovaAkcijaWindow() { DataContext = new NovaAkcijaViewModel(viewModel, salon), Mode = 0 };
             window.ShowDialog();
         }
 

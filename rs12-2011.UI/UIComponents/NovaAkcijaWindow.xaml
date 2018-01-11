@@ -36,6 +36,7 @@
                 <DataGridTextColumn Header="Kolicina" Width="*" Binding="{Binding Item2}" CanUserResize="False" CanUserReorder="False"/>
             </DataGrid.Columns>
         </DataGrid>
+        <DataGrid Grid.Row="4" ItemsSource="{Binding Magacin}"/>
         <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal">
             <TextBlock FontSize="18" Grid.Row="0" Text="Sifra" HorizontalAlignment="Left" VerticalAlignment="Center" />
             <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SifraPopusta}" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150"/>

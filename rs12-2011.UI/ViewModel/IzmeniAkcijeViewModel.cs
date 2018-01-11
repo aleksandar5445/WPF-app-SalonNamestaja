@@ -1,4 +1,5 @@
 ﻿using rs12_2011.model;
+using rs12_2011.UI.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,12 +13,14 @@ namespace rs12_2011.UI.ViewModel
     class IzmeniAkcijeViewModel : INotifyPropertyChanged
     {
         private AdministracijaAkcijeViewModel adminAV;
+        private DatabaseAccess dbaccess;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public IzmeniAkcijeViewModel(AdministracijaAkcijeViewModel aak, Akcija akcija)
         {
             adminAV = aak;
+            dbaccess = new DatabaseAccess();
 
             Naziv = akcija.Naziv;
             DatumPocetka = akcija.DatumPocetka;
@@ -57,6 +60,8 @@ namespace rs12_2011.UI.ViewModel
             ak.DatumPocetka = DatumPocetka;
             ak.Popusti = ParsirajPopuste();
             adminAV.Akcije.Add(ak);
+            dbaccess.UpdateAkcija(ak); 
+
         }
 
         public void KreirajPopust()

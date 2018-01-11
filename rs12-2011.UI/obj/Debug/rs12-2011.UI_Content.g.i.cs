@@ -9,6 +9,7 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("database/scripts/crebas.sql")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("database/scripts/kreirajshemuipodatke.sql")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("database/scripts/seed.sql")]
 
 

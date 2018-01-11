@@ -214,6 +214,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\Scripts\CreBas.sql" />
+    <Content Include="Database\Scripts\KreirajShemuIPodatke.sql" />
     <Content Include="Database\Scripts\seed.sql" />
   </ItemGroup>
   <ItemGroup />
